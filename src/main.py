@@ -2,14 +2,6 @@
 
 import time
 from datetime import timedelta
-
-try:
-    from HTMLParser import HTMLParser
-    from urlparse import urljoin, urldefrag
-except ImportError:
-    from html.parser import HTMLParser
-    from urllib.parse import urljoin, urldefrag
-
 from tornado import httpclient, gen, ioloop, queues
 from bs4 import BeautifulSoup
 import requests
