@@ -5,6 +5,6 @@ install:
     - pip install pep8
     - pip install requests tornado bs4
 before_script:
-    - "pep8 --exclude=migrations --ignore=E501,E225 src"
+    - pip install requests
 script:
     - python setup.py test
