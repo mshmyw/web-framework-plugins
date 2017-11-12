@@ -142,4 +142,5 @@ def main():
 
 if __name__ == '__main__':
     io_loop = ioloop.IOLoop.current()
+    print '--- start travis ci ---'
     io_loop.run_sync(main)
