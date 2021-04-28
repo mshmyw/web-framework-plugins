@@ -2,5 +2,6 @@
 .gitignore
 .prettierignore
 .husky/pre-commit
+.husky/commit-msg
 yarn.lock
 LICENSE

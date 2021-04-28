@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": [".lintstagedrc"],
+      "files": [".lintstagedrc", ".commitlintrc"],
       "options": {
         "parser": "json"
       }
