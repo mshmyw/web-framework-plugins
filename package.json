@@ -1,5 +1,8 @@
 {
   "name": "web-framework",
   "private": true,
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "prettier": "^2.2.1"
+  }
 }
