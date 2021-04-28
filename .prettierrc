@@ -1,1 +1,10 @@
-{}
+{
+  "overrides": [
+    {
+      "files": [".lintstagedrc"],
+      "options": {
+        "parser": "json"
+      }
+    }
+  ]
+}
