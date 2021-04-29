@@ -2,7 +2,9 @@
   "name": "web-framework",
   "private": true,
   "license": "GPL-3.0",
-  "workspaces": [],
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "prepare": "husky install"
   },
