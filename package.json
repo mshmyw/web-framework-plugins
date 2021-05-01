@@ -6,7 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "lerna run start --scope @web-framework/container",
+    "build": "lerna run build"
   },
   "devDependencies": {
     "commitlint": "12.1.1",
