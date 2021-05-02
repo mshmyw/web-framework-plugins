@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "license": "GPL-3.0",
   "scripts": {
+    "start": "rollup --watch --config rollup.config.js",
     "build": "rollup --config rollup.config.js"
   },
   "files": [
