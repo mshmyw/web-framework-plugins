@@ -3,7 +3,8 @@
   "private": true,
   "license": "GPL-3.0",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "tools/*"
   ],
   "scripts": {
     "prepare": "husky install",
