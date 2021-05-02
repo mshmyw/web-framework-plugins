@@ -6,6 +6,9 @@
     "start": "webpack serve --config webpack/dev.config.js",
     "build": "webpack --config webpack/prod.config.js"
   },
+  "dependencies": {
+    "@web-framework/kernel": "^0.0.0"
+  },
   "devDependencies": {
     "@babel/core": "7.14.0",
     "@babel/preset-typescript": "7.13.0",
