@@ -8,4 +8,5 @@ module.exports = merge(commonConfigurations, {
     contentBase: "./dist",
     open: true,
   },
+  devtool: "source-map",
 });
