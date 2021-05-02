@@ -8,6 +8,7 @@ const getRollupConfigurations = () => {
       {
         file: "dist/index.js",
         format: "umd",
+        sourcemap: true,
       },
     ],
     plugins: [
