@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "@tools/rollup-config-factory": "^0.0.0",
-    "rollup": "^2.46.0"
+    "rollup": "2.46.0"
   }
 }
