@@ -4,5 +4,8 @@
 # Yarn
 node_modules/
 
+# Husky
+.husky/
+
 # Web Framework
 /packages/*/dist/
