@@ -1,5 +1,5 @@
 {
-  "name": "@web-framework/container",
+  "name": "@chenshaorui/web-framework-container",
   "version": "0.0.0",
   "license": "GPL-3.0",
   "scripts": {
@@ -7,7 +7,7 @@
     "build": "webpack --config webpack/prod.config.js"
   },
   "dependencies": {
-    "@web-framework/kernel": "^0.0.0"
+    "@chenshaorui/web-framework-kernel": "^0.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.14.0",

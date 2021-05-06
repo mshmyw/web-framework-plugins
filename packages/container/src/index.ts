@@ -1,3 +1,3 @@
-import "@web-framework/kernel";
+import "@chenshaorui/web-framework-kernel";
 
 console.log("Web Framework");
