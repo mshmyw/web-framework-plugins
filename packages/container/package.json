@@ -1,6 +1,6 @@
 {
   "name": "@chenshaorui/web-framework-container",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "GPL-3.0",
   "scripts": {
     "start": "webpack serve --config webpack/dev.config.js",
@@ -11,7 +11,7 @@
     "url": "https://github.com/chenshaorui/web-framework"
   },
   "dependencies": {
-    "@chenshaorui/web-framework-kernel": "^0.0.0"
+    "@chenshaorui/web-framework-kernel": "^0.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.14.0",
