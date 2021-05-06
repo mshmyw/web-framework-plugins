@@ -1,3 +1,3 @@
 import "@chenshaorui/web-framework-kernel";
 
-console.log("Web Framework");
+console.log("I'm Container!");
