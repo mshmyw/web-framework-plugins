@@ -4,5 +4,13 @@
   "npmClient": "yarn",
   "stream": true,
   "conventionalCommits": true,
-  "useWorkspaces": true
+  "useWorkspaces": true,
+  "command": {
+    "publish": {
+      "npmClient": "npm",
+      "allowBranch": "master",
+      "registry": "https://npm.pkg.github.com",
+      "message": "chore: publish packages"
+    }
+  }
 }

@@ -6,6 +6,10 @@
     "start": "rollup --watch --config rollup.config.js",
     "build": "rollup --config rollup.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenshaorui/web-framework"
+  },
   "files": [
     "dist"
   ],

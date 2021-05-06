@@ -2,6 +2,10 @@
   "name": "@chenshaorui/web-framework-tool-rollup-config-factory",
   "version": "0.0.0",
   "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chenshaorui/web-framework"
+  },
   "files": [
     "src"
   ],
