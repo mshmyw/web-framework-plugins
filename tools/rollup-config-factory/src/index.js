@@ -1,6 +1,16 @@
 const { babel } = require("@rollup/plugin-babel");
 const typescript = require("@rollup/plugin-typescript");
 
+const getBabelPluginConfigurations = () => {
+  return babel({
+    babelHelpers: "runtime",
+  });
+};
+
+const getTypeScriptPluginConfigurations = () => {
+  return typescript();
+};
+
 const getRollupConfigurations = () => {
   return {
     input: "src/index.ts",
@@ -16,16 +26,6 @@ const getRollupConfigurations = () => {
       getTypeScriptPluginConfigurations(),
     ],
   };
-};
-
-const getBabelPluginConfigurations = () => {
-  return babel({
-    babelHelpers: "runtime",
-  });
-};
-
-const getTypeScriptPluginConfigurations = () => {
-  return typescript();
 };
 
 module.exports = {
