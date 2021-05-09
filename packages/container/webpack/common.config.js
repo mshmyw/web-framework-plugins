@@ -3,7 +3,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-const packageDirectory = path.dirname(__dirname);
+const packageDirectory = process.cwd();
 
 module.exports = {
   entry: "./src/index.ts",
