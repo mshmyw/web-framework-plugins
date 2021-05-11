@@ -1,5 +1,9 @@
 {
   "name": "@chenshaorui/web-framework-tool-build-metadata",
   "version": "0.0.0",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js"
 }
