@@ -2,6 +2,7 @@ const path = require("path");
 
 const { babel } = require("@rollup/plugin-babel");
 const typescript = require("@rollup/plugin-typescript");
+const copy = require("rollup-plugin-copy");
 
 const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
 
@@ -13,6 +14,17 @@ const getBabelPluginConfigurations = () => {
 
 const getTypeScriptPluginConfigurations = () => {
   return typescript();
+};
+
+const getCopyPluginConfigurations = () => {
+  return copy({
+    targets: [
+      {
+        src: PLUGIN.OUTPUT_DEFINITION_FILE_NAME,
+        dest: "dist",
+      },
+    ],
+  });
 };
 
 const getPluginRollupConfigurations = () => {
@@ -28,6 +40,8 @@ const getPluginRollupConfigurations = () => {
     plugins: [
       getBabelPluginConfigurations(),
       getTypeScriptPluginConfigurations(),
+      // TODO(chenshaorui): Use a custom Rollup plugin to create definition file from codes.
+      getCopyPluginConfigurations(),
     ],
   };
 };
