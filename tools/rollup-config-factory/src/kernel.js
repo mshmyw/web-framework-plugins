@@ -1,5 +1,5 @@
 const { babel } = require("@rollup/plugin-babel");
-const typescript = require("@rollup/plugin-typescript");
+const typescript = require("rollup-plugin-typescript2");
 
 const getBabelPluginConfigurations = () => {
   return babel({

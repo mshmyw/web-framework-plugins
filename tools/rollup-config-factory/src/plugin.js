@@ -1,7 +1,7 @@
 const path = require("path");
 
 const { babel } = require("@rollup/plugin-babel");
-const typescript = require("@rollup/plugin-typescript");
+const typescript = require("rollup-plugin-typescript2");
 const copy = require("rollup-plugin-copy");
 
 const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
