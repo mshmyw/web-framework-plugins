@@ -29,4 +29,7 @@ module.exports = {
       template: "src/index.html",
     }),
   ],
+  externals: {
+    "@chenshaorui/web-framework-kernel": "kernel",
+  },
 };

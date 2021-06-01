@@ -1,3 +1,4 @@
+const path = require("path");
 const { merge } = require("webpack-merge");
 
 const commonConfigurations = require("./common.config.js");
@@ -21,6 +22,12 @@ module.exports = merge(commonConfigurations, {
             configurations.plugin?.components || []
           ),
         });
+      });
+
+      app.get("/kernel.js", (request, response) => {
+        response.sendFile(
+          path.join(packageDirectory, "../kernel/dist/index.js")
+        );
       });
     },
   },

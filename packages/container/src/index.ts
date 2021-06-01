@@ -1,3 +1,3 @@
-import "@chenshaorui/web-framework-kernel";
+import { bootstrap } from "./bootstrap";
 
-console.log("I'm Container!");
+bootstrap().then();
