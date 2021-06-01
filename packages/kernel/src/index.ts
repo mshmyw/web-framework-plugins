@@ -1,1 +1,2 @@
-console.log("I'm Kernel!");
+export * from "./interfaces";
+export * from "./kernel";
