@@ -30,11 +30,15 @@ const getCopyPluginConfigurations = () => {
 const getPluginRollupConfigurations = () => {
   return {
     input: "src/index.ts",
+    external: ["@chenshaorui/web-framework-kernel"],
     output: [
       {
         file: path.join("dist", PLUGIN.OUTPUT_BUNDLE_FILE_NAME),
         format: "umd",
         sourcemap: true,
+        globals: {
+          "@chenshaorui/web-framework-kernel": "kernel",
+        },
       },
     ],
     plugins: [
