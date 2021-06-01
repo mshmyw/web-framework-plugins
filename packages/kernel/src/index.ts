@@ -1,1 +1,1 @@
-console.log("I'm Kernel!");
+export * from "./kernel";
