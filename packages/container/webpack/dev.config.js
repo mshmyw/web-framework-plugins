@@ -3,11 +3,15 @@ const { merge } = require("webpack-merge");
 
 const commonConfigurations = require("./common.config.js");
 const { loadConfigurations } = require("./config/loader.js");
-const { loadComponentPlugins } = require("./plugin/loader.js");
+const {
+  loadComponentPlugins,
+  getComponentPluginBundleFilePathByName,
+} = require("./plugin/loader.js");
 
 const packageDirectory = process.cwd();
 
 const configurations = loadConfigurations(packageDirectory);
+const componentPluginPathPatterns = configurations.plugin?.components || [];
 
 module.exports = merge(commonConfigurations, {
   mode: "development",
@@ -18,9 +22,7 @@ module.exports = merge(commonConfigurations, {
     before: (app) => {
       app.get("/api/bootstrap", (request, response) => {
         response.json({
-          components: loadComponentPlugins(
-            configurations.plugin?.components || []
-          ),
+          components: loadComponentPlugins(componentPluginPathPatterns),
         });
       });
 
@@ -29,6 +31,22 @@ module.exports = merge(commonConfigurations, {
           path.join(packageDirectory, "../kernel/dist/index.js")
         );
       });
+
+      app.get(
+        "/component-plugin/:componentPluginName.js",
+        (request, response) => {
+          const componentPluginBundleFilePath =
+            getComponentPluginBundleFilePathByName(
+              componentPluginPathPatterns,
+              request.params.componentPluginName
+            );
+          if (componentPluginBundleFilePath == null) {
+            response.sendStatus(404);
+          } else {
+            response.sendFile(componentPluginBundleFilePath);
+          }
+        }
+      );
     },
   },
   devtool: "source-map",

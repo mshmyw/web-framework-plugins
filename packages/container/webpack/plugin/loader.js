@@ -78,6 +78,30 @@ const loadComponentPlugins = (componentPluginPathPatterns) => {
   return componentPlugins;
 };
 
+const getComponentPluginBundleFilePathByName = (
+  componentPluginPathPatterns,
+  componentPluginName
+) => {
+  for (const componentPluginPathPattern of componentPluginPathPatterns) {
+    const componentPluginPaths = glob.sync(componentPluginPathPattern);
+    const componentPluginDirectories = componentPluginPaths.filter(
+      (componentPluginPath) => fs.lstatSync(componentPluginPath).isDirectory()
+    );
+    for (const componentPluginDirectory of componentPluginDirectories) {
+      const componentPlugin = loadComponentPlugin(componentPluginDirectory);
+      if (componentPlugin && componentPlugin.name === componentPluginName) {
+        return path.join(
+          componentPluginDirectory,
+          PLUGIN.OUTPUT_BUNDLE_FILE_NAME
+        );
+      }
+    }
+  }
+
+  return null;
+};
+
 module.exports = {
   loadComponentPlugins,
+  getComponentPluginBundleFilePathByName,
 };
