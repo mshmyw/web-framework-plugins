@@ -7,10 +7,14 @@ const {
   loadComponentPlugins,
   getComponentPluginBundleFilePathByName,
 } = require("./plugin/loader.js");
+const { loadStoryboards } = require("./storyboard/loader.js");
 
 const packageDirectory = process.cwd();
 
-const buildBootstrapInfo = (componentPluginPathPatterns) => {
+const buildBootstrapInfo = (
+  componentPluginPathPatterns,
+  storyboardPathPatterns
+) => {
   const componentPlugins = loadComponentPlugins(componentPluginPathPatterns);
 
   const bootstrapComponentPluginsInfo = componentPlugins.map(
@@ -22,14 +26,17 @@ const buildBootstrapInfo = (componentPluginPathPatterns) => {
       };
     }
   );
+  const storyboards = loadStoryboards(storyboardPathPatterns);
 
   return {
     components: bootstrapComponentPluginsInfo,
+    storyboards: storyboards,
   };
 };
 
 const configurations = loadConfigurations(packageDirectory);
 const componentPluginPathPatterns = configurations.plugin?.components || [];
+const storyboardPathPatterns = configurations.storyboards || [];
 
 module.exports = merge(commonConfigurations, {
   mode: "development",
@@ -39,7 +46,12 @@ module.exports = merge(commonConfigurations, {
     port: configurations.server?.port || 8888,
     before: (app) => {
       app.get("/api/bootstrap", (request, response) => {
-        response.json(buildBootstrapInfo(componentPluginPathPatterns));
+        response.json(
+          buildBootstrapInfo(
+            componentPluginPathPatterns,
+            storyboardPathPatterns
+          )
+        );
       });
 
       app.get("/kernel.js", (request, response) => {
