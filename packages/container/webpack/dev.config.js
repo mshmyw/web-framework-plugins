@@ -10,6 +10,24 @@ const {
 
 const packageDirectory = process.cwd();
 
+const buildBootstrapInfo = (componentPluginPathPatterns) => {
+  const componentPlugins = loadComponentPlugins(componentPluginPathPatterns);
+
+  const bootstrapComponentPluginsInfo = componentPlugins.map(
+    (componentPlugin) => {
+      return {
+        name: componentPlugin.name,
+        uri: `/plugin/${componentPlugin.name}.js`,
+        components: componentPlugin.components,
+      };
+    }
+  );
+
+  return {
+    components: bootstrapComponentPluginsInfo,
+  };
+};
+
 const configurations = loadConfigurations(packageDirectory);
 const componentPluginPathPatterns = configurations.plugin?.components || [];
 
@@ -21,9 +39,7 @@ module.exports = merge(commonConfigurations, {
     port: configurations.server?.port || 8888,
     before: (app) => {
       app.get("/api/bootstrap", (request, response) => {
-        response.json({
-          components: loadComponentPlugins(componentPluginPathPatterns),
-        });
+        response.json(buildBootstrapInfo(componentPluginPathPatterns));
       });
 
       app.get("/kernel.js", (request, response) => {
