@@ -10,6 +10,10 @@ export function initializeKernel(bootstrapInfo: BootstrapInfo): void {
       componentPlugin.components
     );
   });
+
+  bootstrapInfo.storyboards.forEach((storyboard) => {
+    kernel.registerStoryboard(storyboard);
+  });
 }
 
 export async function bootstrap(): Promise<void> {
