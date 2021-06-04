@@ -1,5 +1,6 @@
 export interface BootstrapComponentPluginInfo {
   name: string;
+  uri: string;
   components: string[];
 }
 
