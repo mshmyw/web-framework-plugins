@@ -6,9 +6,14 @@ export class Kernel {
     components: {},
   };
 
-  public registerComponentPlugin(name: string, components: string[]) {
+  public registerComponentPlugin(
+    name: string,
+    uri: string,
+    components: string[]
+  ) {
     this.runtimeData.componentPlugins[name] = {
       name,
+      uri,
     };
 
     components.forEach((component) => {

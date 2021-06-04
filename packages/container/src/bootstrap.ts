@@ -6,6 +6,7 @@ export function initializeKernel(bootstrapInfo: BootstrapInfo): void {
   bootstrapInfo.components.forEach((componentPlugin) => {
     kernel.registerComponentPlugin(
       componentPlugin.name,
+      componentPlugin.uri,
       componentPlugin.components
     );
   });

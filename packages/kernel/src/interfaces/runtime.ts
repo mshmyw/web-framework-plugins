@@ -1,5 +1,6 @@
 export interface RuntimeComponentPluginData {
   name: string;
+  uri: string;
 }
 
 export interface RuntimeComponentData {
