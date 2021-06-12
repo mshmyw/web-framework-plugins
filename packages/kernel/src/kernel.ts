@@ -1,4 +1,5 @@
 import { RuntimeData, StoryboardConfig } from "./interfaces";
+import { history } from "./history";
 
 export class Kernel {
   private runtimeData: RuntimeData = {
@@ -38,6 +39,17 @@ export class Kernel {
         );
       }
     });
+  }
+
+  public renderRoute(uri: string) {
+    const route = this.runtimeData.routes[uri];
+    if (!route) {
+      throw new Error(`The URI "${uri}" does not exist!`);
+    }
+  }
+
+  public start() {
+    this.renderRoute(history.getCurrentURL());
   }
 }
 

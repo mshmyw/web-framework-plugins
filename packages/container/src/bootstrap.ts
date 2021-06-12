@@ -21,4 +21,6 @@ export async function bootstrap(): Promise<void> {
     (response) => response.json()
   );
   initializeKernel(bootstrapInfo);
+
+  kernel.start();
 }
