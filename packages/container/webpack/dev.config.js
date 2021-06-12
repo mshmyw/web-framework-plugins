@@ -76,6 +76,7 @@ module.exports = merge(commonConfigurations, {
         }
       );
     },
+    historyApiFallback: true,
   },
   devtool: "source-map",
 });
