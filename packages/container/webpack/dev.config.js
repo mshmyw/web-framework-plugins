@@ -21,7 +21,7 @@ const buildBootstrapInfo = (
     (componentPlugin) => {
       return {
         name: componentPlugin.name,
-        uri: `/plugin/${componentPlugin.name}.js`,
+        uri: `/component-plugin/${componentPlugin.name}.js`,
         components: componentPlugin.components,
       };
     }
