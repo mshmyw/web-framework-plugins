@@ -15,7 +15,8 @@
   ],
   "main": "dist/index.js",
   "dependencies": {
-    "history": "^5.0.0"
+    "history": "^5.0.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@babel/core": "7.14.6",
