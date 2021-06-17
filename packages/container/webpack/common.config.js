@@ -22,11 +22,13 @@ module.exports = {
   output: {
     path: path.join(packageDirectory, "dist"),
     filename: "index.js",
+    publicPath: "/",
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HTMLWebpackPlugin({
-      template: "src/index.html",
+      template: "src/index.ejs",
+      inject: false,
     }),
   ],
   externals: {

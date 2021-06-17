@@ -9,6 +9,7 @@
   <body>
     <div id="component-mount-point"></div>
     <div id="script-mount-point">
+      <% htmlWebpackPlugin.files.js.map(javaScriptFileName => { %><script defer src="<%= javaScriptFileName %>"></script><% }); %>
       <script src="/kernel.js"></script>
     </div>
   </body>

@@ -3,3 +3,5 @@
 .prettierignore
 yarn.lock
 LICENSE
+
+*.ejs
