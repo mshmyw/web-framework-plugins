@@ -35,7 +35,7 @@ const buildBootstrapInfo = (
 };
 
 const configurations = loadConfigurations(packageDirectory);
-const componentPluginPathPatterns = configurations.plugin?.components || [];
+const componentPluginPathPatterns = configurations.plugins?.component || [];
 const storyboardPathPatterns = configurations.storyboards || [];
 
 module.exports = merge(commonConfigurations, {

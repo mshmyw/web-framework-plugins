@@ -2,8 +2,8 @@
   "server": {
     "port": 8888
   },
-  "plugin": {
-    "components": []
+  "plugins": {
+    "component": []
   },
   "storyboards": []
 }
