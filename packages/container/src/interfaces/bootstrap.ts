@@ -6,7 +6,11 @@ export interface BootstrapComponentPluginInfo {
   components: string[];
 }
 
+export interface BootstrapPluginsInfo {
+  component: BootstrapComponentPluginInfo[];
+}
+
 export interface BootstrapInfo {
-  components: BootstrapComponentPluginInfo[];
+  plugins: BootstrapPluginsInfo;
   storyboards: StoryboardConfig[];
 }

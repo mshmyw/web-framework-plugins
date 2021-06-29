@@ -3,7 +3,7 @@ import { kernel } from "@chenshaorui/web-framework-kernel";
 import { BootstrapInfo } from "./interfaces";
 
 export function initializeKernel(bootstrapInfo: BootstrapInfo): void {
-  bootstrapInfo.components.forEach((componentPlugin) => {
+  bootstrapInfo.plugins.component.forEach((componentPlugin) => {
     kernel.registerComponentPlugin(
       componentPlugin.name,
       componentPlugin.uri,

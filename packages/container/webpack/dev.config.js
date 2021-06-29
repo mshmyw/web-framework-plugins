@@ -29,7 +29,9 @@ const buildBootstrapInfo = (
   const storyboards = loadStoryboards(storyboardPathPatterns);
 
   return {
-    components: bootstrapComponentPluginsInfo,
+    plugins: {
+      component: bootstrapComponentPluginsInfo,
+    },
     storyboards: storyboards,
   };
 };
