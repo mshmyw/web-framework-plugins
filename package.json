@@ -7,7 +7,7 @@
     "tools/*"
   ],
   "scripts": {
-    "prepare": "lerna bootstrap && husky install && husky add .husky/pre-commit \"lint-staged\" && husky add .husky/commit-msg \"commitlint --edit\"",
+    "bootstrap": "lerna bootstrap && rm -rf .husky && husky install && husky add .husky/pre-commit \"lint-staged\" && husky add .husky/commit-msg \"commitlint --edit\"",
     "start": "lerna run start --scope @chenshaorui/web-framework-container",
     "build": "lerna run build"
   },
