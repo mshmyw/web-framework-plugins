@@ -24,6 +24,10 @@ export class Kernel {
     uri: string,
     components: string[]
   ) {
+    if (this.runtimeData.componentPlugins[name]) {
+      throw new Error(`The component plugin "${name}" has existed!`);
+    }
+
     this.runtimeData.componentPlugins[name] = {
       name,
       uri,
