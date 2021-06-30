@@ -5,7 +5,6 @@ import {
   StoryboardConfig,
   StoryboardComponentConfig,
 } from "./interfaces";
-import { history } from "./history";
 import { loadComponentPlugins } from "./plugin";
 
 export class Kernel {
@@ -110,14 +109,6 @@ export class Kernel {
         );
       });
     }
-  }
-
-  public start() {
-    this.renderRoute(history.getCurrentURI());
-
-    history.listen((uri) => {
-      this.renderRoute(uri);
-    });
   }
 }
 
