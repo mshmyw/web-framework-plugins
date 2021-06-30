@@ -1,4 +1,4 @@
-import { kernel } from "@chenshaorui/web-framework-kernel";
+import { Kernel, kernel } from "@chenshaorui/web-framework-kernel";
 
 import { BootstrapInfo } from "./interfaces";
 
@@ -9,6 +9,7 @@ export async function fetchBootstrapInfo(): Promise<BootstrapInfo> {
     }
 
     try {
+      // TODO(chenshaorui): Use a JSON schema validation library to validate the schema of bootstrap information.
       return await response.json();
     } catch (error) {
       if (error instanceof SyntaxError) {
@@ -21,7 +22,10 @@ export async function fetchBootstrapInfo(): Promise<BootstrapInfo> {
   });
 }
 
-export function initializeKernel(bootstrapInfo: BootstrapInfo): void {
+export function initializeKernel(
+  kernel: Kernel,
+  bootstrapInfo: BootstrapInfo
+): void {
   bootstrapInfo.plugins.component.forEach((componentPlugin) => {
     try {
       kernel.registerComponentPlugin(
@@ -41,9 +45,13 @@ export function initializeKernel(bootstrapInfo: BootstrapInfo): void {
   });
 }
 
+export function startKernel(kernel: Kernel): void {
+  kernel.start();
+}
+
 export async function bootstrap(): Promise<void> {
   const bootstrapInfo = await fetchBootstrapInfo();
-  initializeKernel(bootstrapInfo);
 
-  kernel.start();
+  initializeKernel(kernel, bootstrapInfo);
+  startKernel(kernel);
 }
