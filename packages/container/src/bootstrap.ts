@@ -23,11 +23,17 @@ export async function fetchBootstrapInfo(): Promise<BootstrapInfo> {
 
 export function initializeKernel(bootstrapInfo: BootstrapInfo): void {
   bootstrapInfo.plugins.component.forEach((componentPlugin) => {
-    kernel.registerComponentPlugin(
-      componentPlugin.name,
-      componentPlugin.uri,
-      componentPlugin.components
-    );
+    try {
+      kernel.registerComponentPlugin(
+        componentPlugin.name,
+        componentPlugin.uri,
+        componentPlugin.components
+      );
+    } catch (error) {
+      console.warn(
+        `Register component plugin "${componentPlugin.name}" failed: ${error.message}`
+      );
+    }
   });
 
   bootstrapInfo.storyboards.forEach((storyboard) => {
