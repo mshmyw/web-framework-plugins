@@ -29,13 +29,15 @@ const buildBootstrapInfo = (
   const storyboards = loadStoryboards(storyboardPathPatterns);
 
   return {
-    components: bootstrapComponentPluginsInfo,
+    plugins: {
+      component: bootstrapComponentPluginsInfo,
+    },
     storyboards: storyboards,
   };
 };
 
 const configurations = loadConfigurations(packageDirectory);
-const componentPluginPathPatterns = configurations.plugin?.components || [];
+const componentPluginPathPatterns = configurations.plugins?.component || [];
 const storyboardPathPatterns = configurations.storyboards || [];
 
 module.exports = merge(commonConfigurations, {
