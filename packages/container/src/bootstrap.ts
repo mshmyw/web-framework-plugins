@@ -26,22 +26,22 @@ export function initializeKernel(
   kernel: Kernel,
   bootstrapInfo: BootstrapInfo
 ): void {
-  bootstrapInfo.plugins.component.forEach((componentPlugin) => {
+  bootstrapInfo.plugins.component.forEach((bootstrapComponentPluginInfo) => {
     try {
       kernel.registerComponentPlugin(
-        componentPlugin.name,
-        componentPlugin.uri,
-        componentPlugin.components
+        bootstrapComponentPluginInfo.name,
+        bootstrapComponentPluginInfo.uri,
+        bootstrapComponentPluginInfo.components
       );
     } catch (error) {
       console.warn(
-        `Register component plugin "${componentPlugin.name}" failed: ${error.message}`
+        `Register component plugin "${bootstrapComponentPluginInfo.name}" failed: ${error.message}`
       );
     }
   });
 
-  bootstrapInfo.storyboards.forEach((storyboard) => {
-    kernel.registerStoryboard(storyboard);
+  bootstrapInfo.storyboards.forEach((storyboardConfig) => {
+    kernel.registerStoryboard(storyboardConfig);
   });
 }
 
