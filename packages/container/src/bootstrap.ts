@@ -1,4 +1,4 @@
-import { Kernel, kernel } from "@chenshaorui/web-framework-kernel";
+import { Kernel, kernel, history } from "@chenshaorui/web-framework-kernel";
 
 import { BootstrapInfo } from "./interfaces";
 
@@ -26,27 +26,31 @@ export function initializeKernel(
   kernel: Kernel,
   bootstrapInfo: BootstrapInfo
 ): void {
-  bootstrapInfo.plugins.component.forEach((componentPlugin) => {
+  bootstrapInfo.plugins.component.forEach((bootstrapComponentPluginInfo) => {
     try {
       kernel.registerComponentPlugin(
-        componentPlugin.name,
-        componentPlugin.uri,
-        componentPlugin.components
+        bootstrapComponentPluginInfo.name,
+        bootstrapComponentPluginInfo.uri,
+        bootstrapComponentPluginInfo.components
       );
     } catch (error) {
       console.warn(
-        `Register component plugin "${componentPlugin.name}" failed: ${error.message}`
+        `Register component plugin "${bootstrapComponentPluginInfo.name}" failed: ${error.message}`
       );
     }
   });
 
-  bootstrapInfo.storyboards.forEach((storyboard) => {
-    kernel.registerStoryboard(storyboard);
+  bootstrapInfo.storyboards.forEach((storyboardConfig) => {
+    kernel.registerStoryboard(storyboardConfig);
   });
 }
 
 export function startKernel(kernel: Kernel): void {
-  kernel.start();
+  kernel.renderRoute(history.getCurrentURI());
+
+  history.listen((uri) => {
+    kernel.renderRoute(uri);
+  });
 }
 
 export async function bootstrap(): Promise<void> {
