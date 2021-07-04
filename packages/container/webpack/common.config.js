@@ -3,7 +3,7 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HTMLWebpackPlugin = require("html-webpack-plugin");
 
-const packageDirectory = process.cwd();
+const packageDirectoryPath = process.cwd();
 
 module.exports = {
   entry: "./src/index.ts",
@@ -20,7 +20,7 @@ module.exports = {
     extensions: [".js", ".ts", "jsx", "tsx"],
   },
   output: {
-    path: path.join(packageDirectory, "dist"),
+    path: path.join(packageDirectoryPath, "dist"),
     filename: "index.js",
     publicPath: "/",
   },
