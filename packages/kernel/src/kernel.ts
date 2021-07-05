@@ -22,7 +22,7 @@ export class Kernel {
     name: string,
     uri: string,
     components: string[]
-  ) {
+  ): void {
     if (this.runtimeData.componentPlugins[name]) {
       throw new Error(`The component plugin "${name}" has existed!`);
     }
@@ -40,12 +40,12 @@ export class Kernel {
     });
   }
 
-  public registerStoryboard(storyboardConfig: StoryboardConfig) {
-    const storyboardRouteConfigs = storyboardConfig?.routes || [];
+  public registerStoryboard(storyboardConfig: StoryboardConfig): void {
+    // TODO(chenshaorui): Use a JSON schema validation library to validate the schema of route storyboard configuration.
+    const storyboardRouteConfigs = storyboardConfig.routes || [];
 
     storyboardRouteConfigs.forEach((storyboardRouteConfig) => {
-      // TODO(chenshaorui): Use a JSON schema validation library to validate the schema of route storyboard configuration.
-      if (storyboardRouteConfig?.uri) {
+      if (storyboardRouteConfig.uri) {
         this.runtimeData.routes[storyboardRouteConfig.uri] =
           storyboardRouteConfig;
       } else {
@@ -56,10 +56,10 @@ export class Kernel {
     });
   }
 
-  public renderComponents = (
+  public renderComponents(
     componentMountPoint: string,
     components: StoryboardComponentConfig[]
-  ): void => {
+  ): void {
     const componentMountPointElement =
       document.getElementById(componentMountPoint);
     if (!componentMountPointElement) {
@@ -81,9 +81,9 @@ export class Kernel {
         }
       }
     });
-  };
+  }
 
-  public renderRoute(uri: string) {
+  public renderRoute(uri: string): void {
     const route = this.runtimeData.routes[uri];
     if (!route) {
       throw new Error(`The URI "${uri}" does not exist!`);
