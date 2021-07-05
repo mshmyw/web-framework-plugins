@@ -1,6 +1,7 @@
 const fs = require("fs");
-const glob = require("glob");
 const path = require("path");
+
+const glob = require("glob");
 
 const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
 
@@ -25,30 +26,44 @@ const convertComponentPluginDefinition = (
   };
 };
 
-const loadComponentPlugin = (componentPluginDirectory) => {
+const loadComponentPlugin = (componentPluginDirectoryPath) => {
   const componentPluginDefinitionFilePath = path.join(
-    componentPluginDirectory,
+    componentPluginDirectoryPath,
     PLUGIN.OUTPUT_DEFINITION_FILE_NAME
   );
-  if (
-    !fs.existsSync(componentPluginDefinitionFilePath) ||
-    !fs.lstatSync(componentPluginDefinitionFilePath).isFile()
-  ) {
+
+  if (!fs.existsSync(componentPluginDefinitionFilePath)) {
     console.warn(
-      `There is no "${PLUGIN.OUTPUT_DEFINITION_FILE_NAME}" in component plugin "${componentPluginDirectory}"!`
+      `There is no "${PLUGIN.OUTPUT_DEFINITION_FILE_NAME}" in component plugin "${componentPluginDirectoryPath}"!`
+    );
+    return null;
+  }
+  if (!fs.lstatSync(componentPluginDefinitionFilePath).isFile()) {
+    console.warn(
+      `The component plugin definition file "${componentPluginDefinitionFilePath}" is not a file!`
     );
     return null;
   }
 
-  let componentPluginDefinition = {};
+  let componentPluginDefinition = null;
+
+  const componentPluginDefinitionFileContent = fs
+    .readFileSync(componentPluginDefinitionFilePath)
+    .toString();
   try {
     componentPluginDefinition = JSON.parse(
-      fs.readFileSync(componentPluginDefinitionFilePath).toString()
+      componentPluginDefinitionFileContent
     );
-  } catch {
-    console.warn(
-      `The content of "${componentPluginDefinitionFilePath}" is not JSON serializable!`
-    );
+  } catch (error) {
+    if (error instanceof SyntaxError) {
+      console.warn(
+        `The content of "${componentPluginDefinitionFilePath}" is not JSON serializable!`
+      );
+    } else {
+      console.warn(
+        `Parse component plugin definition failed: ${error.message}`
+      );
+    }
     return null;
   }
 
@@ -67,8 +82,10 @@ const loadComponentPlugins = (componentPluginPathPatterns) => {
       .filter((componentPluginPath) =>
         fs.lstatSync(componentPluginPath).isDirectory()
       )
-      .forEach((componentPluginDirectory) => {
-        const componentPlugin = loadComponentPlugin(componentPluginDirectory);
+      .forEach((componentPluginDirectoryPath) => {
+        const componentPlugin = loadComponentPlugin(
+          componentPluginDirectoryPath
+        );
         if (componentPlugin) {
           componentPlugins.push(componentPlugin);
         }
@@ -84,14 +101,14 @@ const getComponentPluginBundleFilePathByName = (
 ) => {
   for (const componentPluginPathPattern of componentPluginPathPatterns) {
     const componentPluginPaths = glob.sync(componentPluginPathPattern);
-    const componentPluginDirectories = componentPluginPaths.filter(
+    const componentPluginDirectoryPaths = componentPluginPaths.filter(
       (componentPluginPath) => fs.lstatSync(componentPluginPath).isDirectory()
     );
-    for (const componentPluginDirectory of componentPluginDirectories) {
-      const componentPlugin = loadComponentPlugin(componentPluginDirectory);
+    for (const componentPluginDirectoryPath of componentPluginDirectoryPaths) {
+      const componentPlugin = loadComponentPlugin(componentPluginDirectoryPath);
       if (componentPlugin && componentPlugin.name === componentPluginName) {
         return path.join(
-          componentPluginDirectory,
+          componentPluginDirectoryPath,
           PLUGIN.OUTPUT_BUNDLE_FILE_NAME
         );
       }

@@ -1,15 +1,16 @@
 const path = require("path");
+
 const { merge } = require("webpack-merge");
 
 const commonConfigurations = require("./common.config.js");
-const { loadConfigurations } = require("./config/loader.js");
+const { loadConfigurations } = require("./configuration/loader.js");
 const {
   loadComponentPlugins,
   getComponentPluginBundleFilePathByName,
 } = require("./plugin/loader.js");
 const { loadStoryboards } = require("./storyboard/loader.js");
 
-const packageDirectory = process.cwd();
+const packageDirectoryPath = process.cwd();
 
 const buildBootstrapInfo = (
   componentPluginPathPatterns,
@@ -36,7 +37,7 @@ const buildBootstrapInfo = (
   };
 };
 
-const configurations = loadConfigurations(packageDirectory);
+const configurations = loadConfigurations(packageDirectoryPath);
 const componentPluginPathPatterns = configurations.plugins?.component || [];
 const storyboardPathPatterns = configurations.storyboards || [];
 
@@ -58,7 +59,7 @@ module.exports = merge(commonConfigurations, {
 
       app.get("/kernel.js", (request, response) => {
         response.sendFile(
-          path.join(packageDirectory, "../kernel/dist/index.js")
+          path.join(packageDirectoryPath, "../kernel/dist/index.js")
         );
       });
 
