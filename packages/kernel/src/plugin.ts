@@ -1,10 +1,10 @@
 import { RuntimeData } from "./interfaces";
 
-export const loadComponentPlugins = (
+export function loadComponentPlugins(
   runtimeData: RuntimeData,
   pluginNames: string[],
   callback: () => void
-): void => {
+): void {
   const plugins = pluginNames.map((pluginName) => {
     const plugin = runtimeData.componentPlugins[pluginName];
     if (!plugin) {
@@ -39,4 +39,4 @@ export const loadComponentPlugins = (
       };
     });
   }
-};
+}
