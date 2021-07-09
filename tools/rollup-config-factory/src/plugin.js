@@ -1,20 +1,13 @@
 const path = require("path");
 
-const { babel } = require("@rollup/plugin-babel");
-const typescript = require("rollup-plugin-typescript2");
 const copy = require("rollup-plugin-copy");
 
 const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
 
-const getBabelPluginConfigurations = () => {
-  return babel({
-    babelHelpers: "runtime",
-  });
-};
-
-const getTypeScriptPluginConfigurations = () => {
-  return typescript();
-};
+const {
+  getBabelPluginConfigurations,
+  getTypeScriptPluginConfigurations,
+} = require("./common.js");
 
 const getCopyPluginConfigurations = () => {
   return copy({
@@ -30,7 +23,10 @@ const getCopyPluginConfigurations = () => {
 const getPluginRollupConfigurations = () => {
   return {
     input: "src/index.ts",
-    external: ["@chenshaorui/web-framework-kernel"],
+    external: [
+      "@chenshaorui/web-framework-kernel",
+      "@chenshaorui/web-framework-util",
+    ],
     output: [
       {
         file: path.join("dist", PLUGIN.OUTPUT_BUNDLE_FILE_NAME),

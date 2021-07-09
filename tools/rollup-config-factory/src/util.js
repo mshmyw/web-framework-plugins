@@ -1,3 +1,5 @@
+const replace = require("@rollup/plugin-replace");
+
 const {
   getBabelPluginConfigurations,
   getBabelTransformRuntimePluginConfiguration,
@@ -6,12 +8,19 @@ const {
   getCommonJSPluginConfigurations,
 } = require("./common.js");
 
-const getKernelRollupConfigurations = () => {
+const getReplacePluginConfigurations = () => {
+  return replace({
+    "process.env.NODE_ENV": JSON.stringify("production"),
+    preventAssignment: true,
+  });
+};
+
+const getUtilRollupConfigurations = () => {
   return {
     input: "src/index.ts",
     output: [
       {
-        name: "kernel",
+        name: "webFrameworkUtil",
         file: "dist/index.js",
         format: "umd",
         sourcemap: true,
@@ -23,10 +32,11 @@ const getKernelRollupConfigurations = () => {
       getTypeScriptPluginConfigurations(),
       getNodeResolvePluginConfigurations(),
       getCommonJSPluginConfigurations(),
+      getReplacePluginConfigurations(),
     ],
   };
 };
 
 module.exports = {
-  getKernelRollupConfigurations,
+  getUtilRollupConfigurations,
 };
