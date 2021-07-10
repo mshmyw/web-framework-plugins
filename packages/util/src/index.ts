@@ -1,1 +1,1 @@
-console.log("Util");
+export * from "./history";
