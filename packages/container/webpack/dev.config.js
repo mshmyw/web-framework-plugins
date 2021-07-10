@@ -63,6 +63,12 @@ module.exports = merge(commonConfigurations, {
         );
       });
 
+      app.get("/util.js", (request, response) => {
+        response.sendFile(
+          path.join(packageDirectoryPath, "../util/dist/index.js")
+        );
+      });
+
       app.get(
         "/component-plugin/:componentPluginName.js",
         (request, response) => {
