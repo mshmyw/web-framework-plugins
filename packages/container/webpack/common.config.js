@@ -19,6 +19,10 @@ module.exports = {
   resolve: {
     extensions: [".js", ".ts", "jsx", "tsx"],
   },
+  externals: {
+    "@chenshaorui/web-framework-kernel": "webFrameworkKernel",
+    "@chenshaorui/web-framework-util": "webFrameworkUtil",
+  },
   output: {
     path: path.join(packageDirectoryPath, "dist"),
     filename: "index.js",
@@ -31,8 +35,4 @@ module.exports = {
       inject: false,
     }),
   ],
-  externals: {
-    "@chenshaorui/web-framework-kernel": "kernel",
-    "@chenshaorui/web-framework-util": "webFrameworkUtil",
-  },
 };

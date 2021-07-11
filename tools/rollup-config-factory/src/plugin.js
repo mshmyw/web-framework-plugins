@@ -32,9 +32,6 @@ const getPluginRollupConfigurations = () => {
         file: path.join("dist", PLUGIN.OUTPUT_BUNDLE_FILE_NAME),
         format: "umd",
         sourcemap: true,
-        globals: {
-          "@chenshaorui/web-framework-kernel": "kernel",
-        },
       },
     ],
     plugins: [

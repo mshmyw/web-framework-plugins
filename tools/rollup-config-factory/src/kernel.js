@@ -11,7 +11,7 @@ const getKernelRollupConfigurations = () => {
     input: "src/index.ts",
     output: [
       {
-        name: "kernel",
+        name: "webFrameworkKernel",
         file: "dist/index.js",
         format: "umd",
         sourcemap: true,
