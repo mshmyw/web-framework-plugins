@@ -10,6 +10,10 @@
     "type": "git",
     "url": "https://github.com/chenshaorui/web-framework"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
   "devDependencies": {
     "@babel/core": "7.14.6",
     "@babel/preset-typescript": "7.14.5",
