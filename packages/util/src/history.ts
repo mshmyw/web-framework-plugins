@@ -13,5 +13,3 @@ export class History {
     });
   }
 }
-
-export const history: History = new History();

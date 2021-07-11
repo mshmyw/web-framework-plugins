@@ -1,4 +1,5 @@
-import { Kernel, kernel, history } from "@chenshaorui/web-framework-kernel";
+import { Kernel, kernel } from "@chenshaorui/web-framework-kernel";
+import { History } from "@chenshaorui/web-framework-util";
 
 import { BootstrapInfo } from "./interfaces";
 
@@ -46,6 +47,7 @@ export function initializeKernel(
 }
 
 export function startKernel(kernel: Kernel): void {
+  const history = new History();
   kernel.renderRoute(history.getCurrentURI());
 
   history.listen((uri) => {

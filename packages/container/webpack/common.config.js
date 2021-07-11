@@ -33,5 +33,6 @@ module.exports = {
   ],
   externals: {
     "@chenshaorui/web-framework-kernel": "kernel",
+    "@chenshaorui/web-framework-util": "webFrameworkUtil",
   },
 };

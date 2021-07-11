@@ -11,6 +11,7 @@
     <div id="script-mount-point">
       <% htmlWebpackPlugin.files.js.map(javaScriptFileName => { %><script defer src="<%= javaScriptFileName %>"></script><% }); %>
       <script src="/kernel.js"></script>
+      <script src="/util.js"></script>
     </div>
   </body>
 </html>

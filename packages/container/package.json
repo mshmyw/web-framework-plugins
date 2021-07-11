@@ -25,6 +25,7 @@
     "webpack-merge": "5.8.0"
   },
   "peerDependencies": {
-    "@chenshaorui/web-framework-kernel": "^0.1.0"
+    "@chenshaorui/web-framework-kernel": "^0.1.0",
+    "@chenshaorui/web-framework-util": "^0.0.0"
   }
 }
