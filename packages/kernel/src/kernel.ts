@@ -56,7 +56,7 @@ export class Kernel {
     });
   }
 
-  public renderComponents(
+  private renderComponentsOnMountPoint(
     componentMountPoint: string,
     components: StoryboardComponentConfig[]
   ): void {
@@ -83,6 +83,28 @@ export class Kernel {
     });
   }
 
+  public renderComponents(
+    componentMountPoint: string,
+    components: StoryboardComponentConfig[]
+  ): void {
+    const componentNames = union(components.map((component) => component.name));
+    const componentPluginNames = union(
+      componentNames
+        .filter((componentName) => this.runtimeData.components[componentName])
+        .map(
+          (componentName) =>
+            this.runtimeData.components[componentName].pluginName
+        )
+    );
+
+    loadComponentPlugins(this.runtimeData, componentPluginNames, () => {
+      this.renderComponentsOnMountPoint(
+        this.runtimeData.meta.componentMountPoint,
+        components
+      );
+    });
+  }
+
   public renderRoute(uri: string): void {
     const route = this.runtimeData.routes[uri];
     if (!route) {
@@ -90,24 +112,10 @@ export class Kernel {
     }
 
     if (route.components) {
-      const componentNames = union(
-        route.components.map((component) => component.name)
+      this.renderComponents(
+        this.runtimeData.meta.componentMountPoint,
+        route.components
       );
-      const componentPluginNames = union(
-        componentNames
-          .filter((componentName) => this.runtimeData.components[componentName])
-          .map(
-            (componentName) =>
-              this.runtimeData.components[componentName].pluginName
-          )
-      );
-
-      loadComponentPlugins(this.runtimeData, componentPluginNames, () => {
-        this.renderComponents(
-          this.runtimeData.meta.componentMountPoint,
-          route.components
-        );
-      });
     }
   }
 }
