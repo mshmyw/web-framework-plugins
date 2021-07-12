@@ -1,6 +1,6 @@
 {
   "name": "@chenshaorui/web-framework-tool-rollup-config-factory",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "@chenshaorui/web-framework-tool-build-metadata": "^0.0.0"
+    "@chenshaorui/web-framework-tool-build-metadata": "^0.0.1"
   },
   "peerDependencies": {
     "@babel/core": "^7.14.0",

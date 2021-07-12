@@ -1,6 +1,6 @@
 {
   "name": "@chenshaorui/web-framework-container",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "GPL-3.0",
   "scripts": {
     "start": "webpack serve --config webpack/dev.config.js",
@@ -17,7 +17,7 @@
   "devDependencies": {
     "@babel/core": "7.14.6",
     "@babel/preset-typescript": "7.14.5",
-    "@chenshaorui/web-framework-tool-build-metadata": "^0.0.0",
+    "@chenshaorui/web-framework-tool-build-metadata": "^0.0.1",
     "babel-loader": "8.2.2",
     "clean-webpack-plugin": "4.0.0-alpha.0",
     "glob": "7.1.7",
