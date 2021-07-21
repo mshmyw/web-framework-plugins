@@ -12,9 +12,9 @@
     "build": "lerna run build"
   },
   "devDependencies": {
-    "@babel/core": "7.14.6",
+    "@babel/core": "7.14.8",
     "@babel/plugin-transform-runtime": "7.14.5",
-    "@babel/runtime": "7.14.6",
+    "@babel/runtime": "7.14.8",
     "@chenshaorui/web-framework-kernel": "^0.2.0",
     "@chenshaorui/web-framework-util": "^0.1.0",
     "@rollup/plugin-babel": "5.3.0",
