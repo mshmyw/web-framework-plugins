@@ -18,8 +18,8 @@
     "history": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.14.8",
-    "@babel/plugin-transform-runtime": "7.14.5",
+    "@babel/core": "7.15.0",
+    "@babel/plugin-transform-runtime": "7.15.0",
     "@babel/runtime": "7.14.8",
     "@chenshaorui/web-framework-tool-rollup-config-factory": "^0.0.2",
     "@rollup/plugin-babel": "5.3.0",
