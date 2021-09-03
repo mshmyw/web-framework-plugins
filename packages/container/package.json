@@ -15,7 +15,7 @@
   ],
   "main": "dist/index.js",
   "devDependencies": {
-    "@babel/core": "7.15.0",
+    "@babel/core": "7.15.4",
     "@babel/preset-typescript": "7.15.0",
     "@chenshaorui/web-framework-tool-build-metadata": "^0.0.1",
     "babel-loader": "8.2.2",
