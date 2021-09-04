@@ -44,10 +44,13 @@ const storyboardPathPatterns = configurations.storyboards || [];
 module.exports = merge(commonConfigurations, {
   mode: "development",
   devServer: {
-    contentBase: "dist",
     open: true,
     port: configurations.server?.port || 8888,
-    before: (app) => {
+    static: {
+      directory: "dist",
+    },
+    onBeforeSetupMiddleware: (devServer) => {
+      const app = devServer.app;
       app.get("/api/bootstrap", (request, response) => {
         response.json(
           buildBootstrapInfo(
