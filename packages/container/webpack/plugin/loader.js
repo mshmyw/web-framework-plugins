@@ -5,112 +5,102 @@ const glob = require("glob");
 
 const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
 
-const convertComponentPluginDefinition = (
-  componentPluginDefinition,
-  componentPluginDefinitionFilePath
+const convertPluginDefinition = (
+  pluginDefinition,
+  pluginDefinitionFilePath
 ) => {
   // TODO(chenshaorui): Use a JSON schema validation library to validate the schema of component plugin definition file.
-  const requiredFields = ["name", "components"];
+  const requiredFields = ["type", "name"];
   for (const requiredField of requiredFields) {
-    if (!componentPluginDefinition[requiredField]) {
+    if (!pluginDefinition[requiredField]) {
       console.warn(
-        `There is no "${requiredField}" field in "${componentPluginDefinitionFilePath}"!`
+        `There is no "${requiredField}" field in "${pluginDefinitionFilePath}"!`
       );
       return null;
     }
   }
 
-  return {
-    name: componentPluginDefinition.name,
-    components: componentPluginDefinition.components,
-  };
+  switch (pluginDefinition.type) {
+    case "component":
+      return {
+        name: pluginDefinition.name,
+        components: pluginDefinition.components,
+      };
+    case "library":
+      return {
+        name: pluginDefinition.name,
+      };
+  }
 };
 
-const loadComponentPlugin = (componentPluginDirectoryPath) => {
-  const componentPluginDefinitionFilePath = path.join(
-    componentPluginDirectoryPath,
+const loadPlugin = (pluginDirectoryPath) => {
+  const pluginDefinitionFilePath = path.join(
+    pluginDirectoryPath,
     PLUGIN.OUTPUT_DEFINITION_FILE_NAME
   );
 
-  if (!fs.existsSync(componentPluginDefinitionFilePath)) {
+  if (!fs.existsSync(pluginDefinitionFilePath)) {
     console.warn(
-      `There is no "${PLUGIN.OUTPUT_DEFINITION_FILE_NAME}" in component plugin "${componentPluginDirectoryPath}"!`
+      `There is no "${PLUGIN.OUTPUT_DEFINITION_FILE_NAME}" in plugin "${pluginDirectoryPath}"!`
     );
     return null;
   }
-  if (!fs.lstatSync(componentPluginDefinitionFilePath).isFile()) {
+  if (!fs.lstatSync(pluginDefinitionFilePath).isFile()) {
     console.warn(
-      `The component plugin definition file "${componentPluginDefinitionFilePath}" is not a file!`
+      `The plugin definition file "${pluginDefinitionFilePath}" is not a file!`
     );
     return null;
   }
 
-  let componentPluginDefinition = null;
+  let pluginDefinition = null;
 
-  const componentPluginDefinitionFileContent = fs
-    .readFileSync(componentPluginDefinitionFilePath)
+  const pluginDefinitionFileContent = fs
+    .readFileSync(pluginDefinitionFilePath)
     .toString();
   try {
-    componentPluginDefinition = JSON.parse(
-      componentPluginDefinitionFileContent
-    );
+    pluginDefinition = JSON.parse(pluginDefinitionFileContent);
   } catch (error) {
     if (error instanceof SyntaxError) {
       console.warn(
-        `The content of "${componentPluginDefinitionFilePath}" is not JSON serializable!`
+        `The content of "${pluginDefinitionFilePath}" is not JSON serializable!`
       );
     } else {
-      console.warn(
-        `Parse component plugin definition failed: ${error.message}`
-      );
+      console.warn(`Parse plugin definition failed: ${error.message}`);
     }
     return null;
   }
 
-  return convertComponentPluginDefinition(
-    componentPluginDefinition,
-    componentPluginDefinitionFilePath
-  );
+  return convertPluginDefinition(pluginDefinition, pluginDefinitionFilePath);
 };
 
-const loadComponentPlugins = (componentPluginPathPatterns) => {
-  const componentPlugins = [];
+const loadPlugins = (pluginPathPatterns) => {
+  const plugins = [];
 
-  componentPluginPathPatterns.forEach((componentPluginPathPattern) => {
-    const componentPluginPaths = glob.sync(componentPluginPathPattern);
-    componentPluginPaths
-      .filter((componentPluginPath) =>
-        fs.lstatSync(componentPluginPath).isDirectory()
-      )
-      .forEach((componentPluginDirectoryPath) => {
-        const componentPlugin = loadComponentPlugin(
-          componentPluginDirectoryPath
-        );
-        if (componentPlugin) {
-          componentPlugins.push(componentPlugin);
+  pluginPathPatterns.forEach((pluginPathPattern) => {
+    const pluginPaths = glob.sync(pluginPathPattern);
+    pluginPaths
+      .filter((pluginPath) => fs.lstatSync(pluginPath).isDirectory())
+      .forEach((pluginDirectoryPath) => {
+        const plugin = loadPlugin(pluginDirectoryPath);
+        if (plugin) {
+          plugins.push(plugin);
         }
       });
   });
 
-  return componentPlugins;
+  return plugins;
 };
 
-const getComponentPluginBundleFilePathByName = (
-  componentPluginPathPatterns,
-  componentPluginName
-) => {
-  for (const componentPluginPathPattern of componentPluginPathPatterns) {
-    const componentPluginPaths = glob.sync(componentPluginPathPattern);
-    const componentPluginDirectoryPaths = componentPluginPaths.filter(
-      (componentPluginPath) => fs.lstatSync(componentPluginPath).isDirectory()
+const getPluginBundleFilePathByName = (pluginPathPatterns, pluginName) => {
+  for (const pluginPathPattern of pluginPathPatterns) {
+    const pluginPaths = glob.sync(pluginPathPattern);
+    const pluginDirectoryPaths = pluginPaths.filter((pluginPath) =>
+      fs.lstatSync(pluginPath).isDirectory()
     );
-    for (const componentPluginDirectoryPath of componentPluginDirectoryPaths) {
-      const componentPlugin = loadComponentPlugin(componentPluginDirectoryPath);
-      if (componentPlugin && componentPlugin.name === componentPluginName) {
-        return path.join(
-          componentPluginDirectoryPath,
-          PLUGIN.OUTPUT_BUNDLE_FILE_NAME
-        );
+    for (const pluginDirectoryPath of pluginDirectoryPaths) {
+      const plugin = loadPlugin(pluginDirectoryPath);
+      if (plugin && plugin.name === pluginName) {
+        return path.join(pluginDirectoryPath, PLUGIN.OUTPUT_BUNDLE_FILE_NAME);
       }
     }
   }
@@ -119,6 +109,6 @@ const getComponentPluginBundleFilePathByName = (
 };
 
 module.exports = {
-  loadComponentPlugins,
-  getComponentPluginBundleFilePathByName,
+  loadPlugins,
+  getPluginBundleFilePathByName,
 };

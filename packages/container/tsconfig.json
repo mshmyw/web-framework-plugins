@@ -3,7 +3,8 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "target": "ESNext",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src/**/*"]
 }

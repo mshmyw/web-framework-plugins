@@ -1,9 +1,13 @@
 const { getKernelRollupConfigurations } = require("./kernel.js");
 const { getUtilRollupConfigurations } = require("./util.js");
-const { getPluginRollupConfigurations } = require("./plugin.js");
+const {
+  getComponentPluginRollupConfigurations,
+  getLibraryPluginRollupConfigurations,
+} = require("./plugin.js");
 
 module.exports = {
   getKernelRollupConfigurations,
   getUtilRollupConfigurations,
-  getPluginRollupConfigurations,
+  getComponentPluginRollupConfigurations,
+  getLibraryPluginRollupConfigurations,
 };

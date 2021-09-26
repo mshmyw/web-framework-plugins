@@ -27,6 +27,19 @@ export function initializeKernel(
   kernel: Kernel,
   bootstrapInfo: BootstrapInfo
 ): void {
+  bootstrapInfo.plugins.library.forEach((bootstrapLibraryPluginInfo) => {
+    try {
+      kernel.registerLibraryPlugin(
+        bootstrapLibraryPluginInfo.name,
+        bootstrapLibraryPluginInfo.uri
+      );
+    } catch (error) {
+      console.warn(
+        `Register library plugin "${bootstrapLibraryPluginInfo.name}" failed: ${error.message}`
+      );
+    }
+  });
+
   bootstrapInfo.plugins.component.forEach((bootstrapComponentPluginInfo) => {
     try {
       kernel.registerComponentPlugin(
@@ -47,11 +60,13 @@ export function initializeKernel(
 }
 
 export function startKernel(kernel: Kernel): void {
-  const history = new History();
-  kernel.renderRoute(history.getCurrentURI());
+  kernel.loadLibraries(() => {
+    const history = new History();
+    kernel.renderRoute(history.getCurrentURI());
 
-  history.listen((uri) => {
-    kernel.renderRoute(uri);
+    history.listen((uri) => {
+      kernel.renderRoute(uri);
+    });
   });
 }
 

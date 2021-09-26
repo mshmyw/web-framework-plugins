@@ -5,7 +5,7 @@ import {
   StoryboardConfig,
   StoryboardComponentConfig,
 } from "./interfaces";
-import { loadComponentPlugins } from "./plugin";
+import { loadLibraryPlugins, loadComponentPlugins } from "./plugin";
 
 export class Kernel {
   private runtimeData: RuntimeData = {
@@ -13,10 +13,23 @@ export class Kernel {
       componentMountPoint: "component-mount-point",
       scriptMountPoint: "script-mount-point",
     },
+    libraryPlugins: {},
     componentPlugins: {},
     components: {},
     routes: {},
   };
+
+  public registerLibraryPlugin(name: string, uri: string): void {
+    if (this.runtimeData.libraryPlugins[name]) {
+      throw new Error(`The library plugin "${name}" has existed!`);
+    }
+
+    this.runtimeData.libraryPlugins[name] = {
+      name,
+      uri,
+      isLoaded: false,
+    };
+  }
 
   public registerComponentPlugin(
     name: string,
@@ -81,6 +94,14 @@ export class Kernel {
         }
       }
     });
+  }
+
+  public loadLibraries(callback: () => void): void {
+    loadLibraryPlugins(
+      this.runtimeData,
+      Object.keys(this.runtimeData.libraryPlugins),
+      callback
+    );
   }
 
   public renderComponents(
