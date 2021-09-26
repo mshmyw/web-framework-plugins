@@ -1,5 +1,10 @@
 import { StoryboardConfig } from "@chenshaorui/web-framework-kernel";
 
+export interface BootstrapLibraryPluginInfo {
+  name: string;
+  uri: string;
+}
+
 export interface BootstrapComponentPluginInfo {
   name: string;
   uri: string;
@@ -7,6 +12,7 @@ export interface BootstrapComponentPluginInfo {
 }
 
 export interface BootstrapPluginsInfo {
+  library: BootstrapLibraryPluginInfo[];
   component: BootstrapComponentPluginInfo[];
 }
 

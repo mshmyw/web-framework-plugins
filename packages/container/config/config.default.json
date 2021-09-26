@@ -3,7 +3,8 @@
     "port": 8888
   },
   "plugins": {
-    "component": []
+    "component": [],
+    "library": []
   },
   "storyboards": []
 }
