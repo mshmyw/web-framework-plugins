@@ -1,19 +1,11 @@
-const replace = require("@rollup/plugin-replace");
-
 const {
   getBabelPluginConfigurations,
   getBabelTransformRuntimePluginConfiguration,
   getTypeScriptPluginConfigurations,
   getNodeResolvePluginConfigurations,
   getCommonJSPluginConfigurations,
+  getReplacePluginConfigurations,
 } = require("./common.js");
-
-const getReplacePluginConfigurations = () => {
-  return replace({
-    "process.env.NODE_ENV": JSON.stringify("production"),
-    preventAssignment: true,
-  });
-};
 
 const getUtilRollupConfigurations = () => {
   return {
