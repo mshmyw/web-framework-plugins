@@ -28,11 +28,11 @@
     "husky": "7.0.2",
     "lerna": "4.0.0",
     "lint-staged": "11.1.2",
-    "postcss": "^8.3.7",
+    "postcss": "8.3.8",
     "prettier": "2.4.1",
     "rollup": "2.57.0",
     "rollup-plugin-copy": "3.4.0",
-    "rollup-plugin-postcss": "^4.0.1",
+    "rollup-plugin-postcss": "4.0.1",
     "rollup-plugin-typescript2": "0.30.0",
     "tslib": "2.3.1",
     "typescript": "4.4.3"
