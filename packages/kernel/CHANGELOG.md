@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/chenshaorui/web-framework/compare/@chenshaorui/web-framework-kernel@0.2.0...@chenshaorui/web-framework-kernel@0.3.0) (2021-09-26)
+
+### Features
+
+- **kernel:** register and load library plugins ([f9e2dde](https://github.com/chenshaorui/web-framework/commit/f9e2dde0fddec7b288d7bba94c5c549520b820b6))
+
 # [0.2.0](https://github.com/chenshaorui/web-framework/compare/@chenshaorui/web-framework-kernel@0.1.0...@chenshaorui/web-framework-kernel@0.2.0) (2021-07-12)
 
 ### Bug Fixes

@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/chenshaorui/web-framework/compare/@chenshaorui/web-framework-container@0.2.0...@chenshaorui/web-framework-container@0.3.0) (2021-09-26)
+
+### Features
+
+- **container:** load library plugins ([4b31034](https://github.com/chenshaorui/web-framework/commit/4b3103421a821643af1b903200e8ce0e2c333ad3))
+
 # [0.2.0](https://github.com/chenshaorui/web-framework/compare/@chenshaorui/web-framework-container@0.1.0...@chenshaorui/web-framework-container@0.2.0) (2021-07-12)
 
 ### Bug Fixes
