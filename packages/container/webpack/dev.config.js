@@ -2,6 +2,7 @@ const path = require("path");
 
 const { merge } = require("webpack-merge");
 
+const { getHTMLWebpackPlugin } = require("./common.js");
 const commonConfigurations = require("./common.config.js");
 const { loadConfigurations } = require("./configuration/loader.js");
 const {
@@ -9,6 +10,8 @@ const {
   getPluginBundleFilePathByName,
 } = require("./plugin/loader.js");
 const { loadStoryboards } = require("./storyboard/loader.js");
+const { WebSocketServer } = require("./web-socket/server.js");
+const { Watcher } = require("./web-socket/watcher.js");
 
 const packageDirectoryPath = process.cwd();
 
@@ -111,8 +114,30 @@ module.exports = merge(commonConfigurations, {
           }
         }
       );
+
+      const websocketServer = new WebSocketServer(
+        configurations.webSocketServer.port
+      );
+      const watcher = new Watcher([
+        ...componentPluginPathPatterns.map((componentPluginPathPattern) =>
+          path.join(componentPluginPathPattern, "*")
+        ),
+        ...libraryPluginPathPatterns.map((libraryPluginPathPattern) =>
+          path.join(libraryPluginPathPattern, "*")
+        ),
+      ]);
+      watcher.listenChangeEvent(() => {
+        websocketServer.sendReloadCommand();
+      });
     },
     historyApiFallback: true,
   },
+  plugins: [
+    getHTMLWebpackPlugin({
+      websocketEnabled: configurations.webSocketServer.enabled,
+      websocketHost: "localhost",
+      websocketPort: configurations.webSocketServer.port,
+    }),
+  ],
   devtool: "source-map",
 });
