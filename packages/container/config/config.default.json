@@ -2,6 +2,11 @@
   "server": {
     "port": 8888
   },
+  "webSocketServer": {
+    "enabled": true,
+    "port": 9999,
+    "reloadAsPluginUpdated": true
+  },
   "plugins": {
     "component": [],
     "library": []

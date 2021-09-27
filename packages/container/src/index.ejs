@@ -12,6 +12,14 @@
       <% htmlWebpackPlugin.files.js.map(javaScriptFileName => { %><script defer src="<%= javaScriptFileName %>"></script><% }); %>
       <script src="/kernel.js"></script>
       <script src="/util.js"></script>
+      <% if (htmlWebpackPlugin.options.websocketEnabled) { %><script>
+        const websocket = new WebSocket("ws://<%= htmlWebpackPlugin.options.websocketHost %>:<%= htmlWebpackPlugin.options.websocketPort %>");
+        websocket.onmessage = (event) => {
+          if (event.data === "reload") {
+            location.reload();
+          }
+        }
+      </script><% } %>
     </div>
   </body>
 </html>
