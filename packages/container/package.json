@@ -28,7 +28,7 @@
     "webpack-cli": "4.8.0",
     "webpack-dev-server": "4.3.0",
     "webpack-merge": "5.8.0",
-    "ws": "8.2.2"
+    "ws": "8.2.3"
   },
   "peerDependencies": {
     "@chenshaorui/web-framework-kernel": "^0.3.0",
