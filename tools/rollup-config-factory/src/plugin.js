@@ -4,7 +4,6 @@ const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
 
 const {
   getBabelPluginConfigurations,
-  getBabelTransformRuntimePluginConfiguration,
   getTypeScriptPluginConfigurations,
   getNodeResolvePluginConfigurations,
   getCommonJSPluginConfigurations,
@@ -56,7 +55,6 @@ const getLibraryPluginRollupConfigurations = (libraryName) => {
     ],
     plugins: [
       getBabelPluginConfigurations(),
-      getBabelTransformRuntimePluginConfiguration(),
       getTypeScriptPluginConfigurations(),
       getNodeResolvePluginConfigurations(),
       getCommonJSPluginConfigurations(),

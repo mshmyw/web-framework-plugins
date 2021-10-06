@@ -1,6 +1,5 @@
 const {
   getBabelPluginConfigurations,
-  getBabelTransformRuntimePluginConfiguration,
   getTypeScriptPluginConfigurations,
   getNodeResolvePluginConfigurations,
   getCommonJSPluginConfigurations,
@@ -19,7 +18,6 @@ const getKernelRollupConfigurations = () => {
     ],
     plugins: [
       getBabelPluginConfigurations(),
-      getBabelTransformRuntimePluginConfiguration(),
       getTypeScriptPluginConfigurations(),
       getNodeResolvePluginConfigurations(),
       getCommonJSPluginConfigurations(),

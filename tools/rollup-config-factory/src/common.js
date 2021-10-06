@@ -13,10 +13,6 @@ const getBabelPluginConfigurations = () => {
   });
 };
 
-const getBabelTransformRuntimePluginConfiguration = () => {
-  return ["@babel/plugin-transform-runtime"];
-};
-
 const getTypeScriptPluginConfigurations = () => {
   return typescript();
 };
@@ -56,7 +52,6 @@ const getCopyPluginConfigurations = (src, dest) => {
 
 module.exports = {
   getBabelPluginConfigurations,
-  getBabelTransformRuntimePluginConfiguration,
   getTypeScriptPluginConfigurations,
   getNodeResolvePluginConfigurations,
   getCommonJSPluginConfigurations,
