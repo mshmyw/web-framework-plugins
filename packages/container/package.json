@@ -15,10 +15,10 @@
   ],
   "main": "dist/index.js",
   "devDependencies": {
-    "@babel/core": "7.15.5",
+    "@babel/core": "7.15.8",
     "@babel/preset-typescript": "7.15.0",
     "@chenshaorui/web-framework-tool-build-metadata": "^0.0.1",
-    "babel-loader": "8.2.2",
+    "babel-loader": "8.2.3",
     "chokidar": "3.5.2",
     "clean-webpack-plugin": "4.0.0",
     "glob": "7.2.0",
