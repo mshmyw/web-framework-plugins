@@ -1,6 +1,9 @@
+const path = require("path");
+
+const { getBabelOutputPlugin } = require("@rollup/plugin-babel");
+
 const {
   getBabelPluginConfigurations,
-  getBabelTransformRuntimePluginConfiguration,
   getTypeScriptPluginConfigurations,
   getNodeResolvePluginConfigurations,
   getCommonJSPluginConfigurations,
@@ -15,11 +18,16 @@ const getKernelRollupConfigurations = () => {
         file: "dist/index.js",
         format: "umd",
         sourcemap: true,
+        plugins: [
+          getBabelOutputPlugin({
+            allowAllFormats: true,
+            configFile: path.resolve("babel.config.js"),
+          }),
+        ],
       },
     ],
     plugins: [
       getBabelPluginConfigurations(),
-      getBabelTransformRuntimePluginConfiguration(),
       getTypeScriptPluginConfigurations(),
       getNodeResolvePluginConfigurations(),
       getCommonJSPluginConfigurations(),

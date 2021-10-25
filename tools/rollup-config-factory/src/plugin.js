@@ -1,10 +1,10 @@
 const path = require("path");
 
+const { getBabelOutputPlugin } = require("@rollup/plugin-babel");
 const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
 
 const {
   getBabelPluginConfigurations,
-  getBabelTransformRuntimePluginConfiguration,
   getTypeScriptPluginConfigurations,
   getNodeResolvePluginConfigurations,
   getCommonJSPluginConfigurations,
@@ -31,6 +31,12 @@ const getComponentPluginRollupConfigurations = (globals) => {
         format: "umd",
         sourcemap: true,
         globals,
+        plugins: [
+          getBabelOutputPlugin({
+            allowAllFormats: true,
+            configFile: path.resolve("babel.config.js"),
+          }),
+        ],
       },
     ],
     plugins: [
@@ -56,7 +62,6 @@ const getLibraryPluginRollupConfigurations = (libraryName) => {
     ],
     plugins: [
       getBabelPluginConfigurations(),
-      getBabelTransformRuntimePluginConfiguration(),
       getTypeScriptPluginConfigurations(),
       getNodeResolvePluginConfigurations(),
       getCommonJSPluginConfigurations(),
