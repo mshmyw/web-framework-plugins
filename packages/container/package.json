@@ -15,8 +15,8 @@
   ],
   "main": "dist/index.js",
   "devDependencies": {
-    "@babel/core": "7.15.8",
-    "@babel/preset-typescript": "7.15.0",
+    "@babel/core": "7.16.0",
+    "@babel/preset-typescript": "7.16.0",
     "@chenshaorui/web-framework-tool-build-metadata": "^0.0.1",
     "babel-loader": "8.2.3",
     "chokidar": "3.5.2",
