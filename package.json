@@ -1,6 +1,5 @@
 {
   "name": "web-framework",
-  "private": true,
   "license": "GPL-3.0",
   "workspaces": [
     "packages/*",
@@ -8,7 +7,7 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap && rm -rf .husky && husky install && husky add .husky/pre-commit \"lint-staged\" && husky add .husky/commit-msg \"commitlint --edit\"",
-    "start": "lerna run start --scope @chenshaorui/web-framework-container",
+    "start": "pnpm dev --filter@krill/web-framework-container",
     "build": "lerna run build"
   },
   "devDependencies": {
@@ -18,8 +17,8 @@
     "@babel/plugin-transform-runtime": "7.16.0",
     "@babel/preset-env": "7.16.0",
     "@babel/runtime": "7.16.0",
-    "@chenshaorui/web-framework-kernel": "^0.3.0",
-    "@chenshaorui/web-framework-util": "^0.1.1",
+    "@krill/web-framework-kernel": "workspace:*",
+    "@krill/web-framework-utils": "workspace:*",
     "@rollup/plugin-babel": "5.3.0",
     "@rollup/plugin-commonjs": "21.0.1",
     "@rollup/plugin-node-resolve": "13.0.6",
