@@ -1,9 +1,9 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.1.1/schema.json",
-  "changelog": ["@changesets/cli/changelog", { "repo": "keystonejs/keystone" }],
+  "changelog": "@changesets/cli/changelog",
   "commit": false,
   "fixed": [],
-  "linked": [["packages/*", "tools/*"]],
+  "linked": [],
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
