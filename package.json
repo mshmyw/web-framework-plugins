@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "clear": "rimraf '{packages,tools}/*/{lib,dist,node_modules}' && rimraf node_modules",
-    "bootstrap": "pnpm install && rm -rf .husky && husky install && husky add .husky/pre-commit \"lint-staged\" && husky add .husky/commit-msg \"commitlint --edit\"",
+    "bootstrap": "pnpm install && rm -rf .husky && husky install && husky add .husky/pre-commit \"npx --no-install lint-staged\" && husky add .husky/commit-msg \"npx --no-install commitlint --edit \"\" \"",
     "start": "pnpm --filter=@krill/web-framework-container start",
     "build": "pnpm build"
   },
