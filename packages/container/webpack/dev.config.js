@@ -83,7 +83,7 @@ module.exports = merge(commonConfigurations, {
 
       app.get("/util.js", (request, response) => {
         response.sendFile(
-          path.join(packageDirectoryPath, "../util/dist/index.js")
+          path.join(packageDirectoryPath, "../utils/dist/index.js")
         );
       });
 
