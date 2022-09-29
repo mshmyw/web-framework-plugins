@@ -59,3 +59,13 @@ pnpm monorepo 默认的能力是：依赖安装、运行、构建。
 $ pnpm add -DW @changesets/cli
 $ pnpm changeset init
 ```
+
+## changeset 一个注意的问题
+
+主干分支是 main 而不是 master
+
+# 语义化版本管理 semver
+
+https://semver.org/
+语义化的版本控制（Semantic Versioning），简称语义化版本，英文缩写为 SemVer。
+版本：语义化版本格式：主版本号.次版本号.修订号（MAJOR.MINOR.PATCH）mmp

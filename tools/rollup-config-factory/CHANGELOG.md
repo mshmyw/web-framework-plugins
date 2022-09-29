@@ -1,5 +1,16 @@
 # Change Log
 
+## 0.1.0
+
+### Minor Changes
+
+- rollup config factory init
+
+### Patch Changes
+
+- Updated dependencies
+  - @krill/web-framework-tool-build-metadata@0.0.2
+
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
