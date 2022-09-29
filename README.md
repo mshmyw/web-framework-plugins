@@ -48,3 +48,14 @@ npx --no-install commitlint --edit ""
 
 2 运行`pnpm build`
 3 运行 `pnpm start`
+
+# 发布
+
+pnpm monorepo 默认的能力是：依赖安装、运行、构建。
+缺失的能力是版本管理，其可用 changeset 补充
+使用文档：https://pnpm.io/zh/using-changesets
+
+```
+$ pnpm add -DW @changesets/cli
+$ pnpm changeset init
+```
