@@ -69,3 +69,18 @@ $ pnpm changeset init
 https://semver.org/
 语义化的版本控制（Semantic Versioning），简称语义化版本，英文缩写为 SemVer。
 版本：语义化版本格式：主版本号.次版本号.修订号（MAJOR.MINOR.PATCH）mmp
+
+# npm 403
+
+将http://registry.npm.taobao.org 淘宝镜像切到
+
+```
+npm config set registry https://registry.npmjs.org/
+```
+
+发布之后再切换淘宝镜像
+
+```
+npm config set registry=https://registry.npm.taobao.org/
+npm config get registry
+```
