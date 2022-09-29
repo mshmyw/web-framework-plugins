@@ -75,7 +75,7 @@ https://semver.org/
 将http://registry.npm.taobao.org 淘宝镜像切到
 
 ```
-npm config set registry https://registry.npmjs.org/
+npm config set registry=https://registry.npmjs.org/
 ```
 
 发布之后再切换淘宝镜像
