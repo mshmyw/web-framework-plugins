@@ -29,7 +29,6 @@
     "commitlint": "13.2.1",
     "eslint": "8.1.0",
     "husky": "7.0.4",
-    "lerna": "4.0.0",
     "lint-staged": "11.2.6",
     "postcss": "8.3.11",
     "prettier": "2.4.1",
