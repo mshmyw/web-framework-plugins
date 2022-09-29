@@ -7,9 +7,9 @@
   ],
   "scripts": {
     "clear": "rimraf '{packages,tools}/*/{lib,dist,node_modules}' && rimraf node_modules",
-    "bootstrap": "lerna bootstrap && rm -rf .husky && husky install && husky add .husky/pre-commit \"lint-staged\" && husky add .husky/commit-msg \"commitlint --edit\"",
+    "bootstrap": "pnpm install && rm -rf .husky && husky install && husky add .husky/pre-commit \"lint-staged\" && husky add .husky/commit-msg \"commitlint --edit\"",
     "start": "pnpm dev --filter@krill/web-framework-container",
-    "build": "lerna run build"
+    "build": "pnpm build"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",

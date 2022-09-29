@@ -1,5 +1,5 @@
 {
-  "name": "@chenshaorui/web-framework-container",
+  "name": "@krill/web-framework-container",
   "version": "0.3.0",
   "license": "GPL-3.0",
   "scripts": {
@@ -17,7 +17,7 @@
   "devDependencies": {
     "@babel/core": "7.16.0",
     "@babel/preset-typescript": "7.16.0",
-    "@chenshaorui/web-framework-tool-build-metadata": "^0.0.1",
+    "@krill/web-framework-tool-build-metadata": "workspace:*",
     "babel-loader": "8.2.3",
     "chokidar": "3.5.2",
     "clean-webpack-plugin": "4.0.0",
@@ -30,8 +30,8 @@
     "webpack-merge": "5.8.0",
     "ws": "8.2.3"
   },
-  "peerDependencies": {
-    "@chenshaorui/web-framework-kernel": "^0.3.0",
-    "@chenshaorui/web-framework-util": "^0.1.1"
+  "dependencies": {
+    "@krill/web-framework-kernel": "workspace:*",
+    "@krill/web-framework-utils": "workspace:*"
   }
 }
