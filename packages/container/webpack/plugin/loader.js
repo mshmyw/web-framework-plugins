@@ -3,7 +3,7 @@ const path = require("path");
 
 const glob = require("glob");
 
-const { PLUGIN } = require("@chenshaorui/web-framework-tool-build-metadata");
+const { PLUGIN } = require("@krill/web-framework-tool-build-metadata");
 
 const convertPluginDefinition = (
   pluginDefinition,

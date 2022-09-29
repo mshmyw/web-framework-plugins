@@ -1,5 +1,5 @@
 const {
   getUtilRollupConfigurations,
-} = require("@chenshaorui/web-framework-tool-rollup-config-factory");
+} = require("@krill/web-framework-tool-rollup-config-factory");
 
 module.exports = getUtilRollupConfigurations();

@@ -74,10 +74,10 @@ importers:
       glob: 7.2.0
       html-webpack-plugin: 5.5.0
       lodash: 4.17.21
-      webpack: 5.61.0
-      webpack-cli: 4.9.1
-      webpack-dev-server: 4.4.0
-      webpack-merge: 5.8.0
+      webpack: ^5.61.0
+      webpack-cli: ^4.10.0
+      webpack-dev-server: ^4.4.0
+      webpack-merge: ^5.8.0
       ws: 8.2.3
     dependencies:
       "@krill/web-framework-kernel": link:../kernel
@@ -92,9 +92,9 @@ importers:
       glob: registry.npmmirror.com/glob/7.2.0
       html-webpack-plugin: registry.npmmirror.com/html-webpack-plugin/5.5.0_webpack@5.61.0
       lodash: registry.npmmirror.com/lodash/4.17.21
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq
-      webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.4.0_6nttg2tx25yb22e42zyherlmty
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq
+      webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.4.0_gsf3kbl7lkd67oqwp76ivzgfha
       webpack-merge: registry.npmmirror.com/webpack-merge/5.8.0
       ws: registry.npmmirror.com/ws/8.2.3
 
@@ -4835,7 +4835,7 @@ packages:
       "@xtuc/long": registry.npmmirror.com/@xtuc/long/4.2.2
     dev: true
 
-  registry.npmmirror.com/@webpack-cli/configtest/1.2.0_6nttg2tx25yb22e42zyherlmty:
+  registry.npmmirror.com/@webpack-cli/configtest/1.2.0_gsf3kbl7lkd67oqwp76ivzgfha:
     resolution:
       {
         integrity: sha512-4FB8Tj6xyVkyqjj1OaTqCjXYULB9FMkqQ8yGrZjRDrYh0nOE+7Lhs45WioWQQMV+ceFlE368Ukhe6xdvJM9Egg==,
@@ -4849,11 +4849,11 @@ packages:
       webpack: 4.x.x || 5.x.x
       webpack-cli: 4.x.x
     dependencies:
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq
     dev: true
 
-  registry.npmmirror.com/@webpack-cli/info/1.5.0_webpack-cli@4.9.1:
+  registry.npmmirror.com/@webpack-cli/info/1.5.0_webpack-cli@4.10.0:
     resolution:
       {
         integrity: sha512-e8tSXZpw2hPl2uMJY6fsMswaok5FdlGNRTktvFk2sD8RjH0hE2+XistawJx1vmKteh4NmGmNUrp+Tb2w+udPcQ==,
@@ -4867,10 +4867,10 @@ packages:
       webpack-cli: 4.x.x
     dependencies:
       envinfo: registry.npmmirror.com/envinfo/7.8.1
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq
     dev: true
 
-  registry.npmmirror.com/@webpack-cli/serve/1.7.0_sasfuds5e5cmo7jfuu6bxhxt44:
+  registry.npmmirror.com/@webpack-cli/serve/1.7.0_kdfstf62mwqtycr7bcl6qvhdo4:
     resolution:
       {
         integrity: sha512-oxnCNGj88fL+xzV+dacXs44HcDwf1ovs3AuEzvP7mqXw7fQntqIhQ1BRmynh4qEKQSSSRSWVyXRjmTbZIX9V2Q==,
@@ -4887,8 +4887,8 @@ packages:
       webpack-dev-server:
         optional: true
     dependencies:
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq
-      webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.4.0_6nttg2tx25yb22e42zyherlmty
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq
+      webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.4.0_gsf3kbl7lkd67oqwp76ivzgfha
     dev: true
 
   registry.npmmirror.com/@xtuc/ieee754/1.2.0:
@@ -5567,7 +5567,7 @@ packages:
       loader-utils: registry.npmmirror.com/loader-utils/1.4.0
       make-dir: registry.npmmirror.com/make-dir/3.1.0
       schema-utils: registry.npmmirror.com/schema-utils/2.7.1
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
     dev: true
 
   registry.npmmirror.com/babel-plugin-dynamic-import-node/2.3.3:
@@ -6197,7 +6197,7 @@ packages:
       webpack: ">=4.0.0 <6.0.0"
     dependencies:
       del: registry.npmmirror.com/del/4.1.1
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
     dev: true
 
   registry.npmmirror.com/cli-cursor/3.1.0:
@@ -9561,7 +9561,7 @@ packages:
       lodash: registry.npmmirror.com/lodash/4.17.21
       pretty-error: registry.npmmirror.com/pretty-error/4.0.0
       tapable: registry.npmmirror.com/tapable/2.2.1
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
     dev: true
 
   registry.npmmirror.com/htmlparser2/6.1.0:
@@ -16597,7 +16597,7 @@ packages:
       schema-utils: registry.npmmirror.com/schema-utils/3.1.1
       serialize-javascript: registry.npmmirror.com/serialize-javascript/6.0.0
       terser: registry.npmmirror.com/terser/5.15.0
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
     dev: true
 
   registry.npmmirror.com/terser/5.15.0:
@@ -17468,16 +17468,16 @@ packages:
     engines: { node: ">=10.4" }
     dev: true
 
-  registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq:
+  registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq:
     resolution:
       {
-        integrity: sha512-JYRFVuyFpzDxMDB+v/nanUdQYcZtqFPGzmlW4s+UkPMFhSpfRNmf1z4AwYcHJVdvEFAM7FFCQdNTpsBYhDLusQ==,
+        integrity: sha512-NLhDfH/h4O6UOy+0LSso42xvYypClINuMNBVVzX4vX98TmTaTUxwRbXdhucbFMd2qLaCTcLq/PdYrvi8onw90w==,
         registry: http://registry.npm.taobao.org/,
-        tarball: https://registry.npmmirror.com/webpack-cli/-/webpack-cli-4.9.1.tgz,
+        tarball: https://registry.npmmirror.com/webpack-cli/-/webpack-cli-4.10.0.tgz,
       }
-    id: registry.npmmirror.com/webpack-cli/4.9.1
+    id: registry.npmmirror.com/webpack-cli/4.10.0
     name: webpack-cli
-    version: 4.9.1
+    version: 4.10.0
     engines: { node: ">=10.13.0" }
     hasBin: true
     peerDependencies:
@@ -17497,18 +17497,18 @@ packages:
         optional: true
     dependencies:
       "@discoveryjs/json-ext": registry.npmmirror.com/@discoveryjs/json-ext/0.5.7
-      "@webpack-cli/configtest": registry.npmmirror.com/@webpack-cli/configtest/1.2.0_6nttg2tx25yb22e42zyherlmty
-      "@webpack-cli/info": registry.npmmirror.com/@webpack-cli/info/1.5.0_webpack-cli@4.9.1
-      "@webpack-cli/serve": registry.npmmirror.com/@webpack-cli/serve/1.7.0_sasfuds5e5cmo7jfuu6bxhxt44
+      "@webpack-cli/configtest": registry.npmmirror.com/@webpack-cli/configtest/1.2.0_gsf3kbl7lkd67oqwp76ivzgfha
+      "@webpack-cli/info": registry.npmmirror.com/@webpack-cli/info/1.5.0_webpack-cli@4.10.0
+      "@webpack-cli/serve": registry.npmmirror.com/@webpack-cli/serve/1.7.0_kdfstf62mwqtycr7bcl6qvhdo4
       colorette: registry.npmmirror.com/colorette/2.0.19
       commander: registry.npmmirror.com/commander/7.2.0
-      execa: registry.npmmirror.com/execa/5.1.1
+      cross-spawn: registry.npmmirror.com/cross-spawn/7.0.3
       fastest-levenshtein: registry.npmmirror.com/fastest-levenshtein/1.0.16
       import-local: registry.npmmirror.com/import-local/3.1.0
       interpret: registry.npmmirror.com/interpret/2.2.0
       rechoir: registry.npmmirror.com/rechoir/0.7.1
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
-      webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.4.0_6nttg2tx25yb22e42zyherlmty
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
+      webpack-dev-server: registry.npmmirror.com/webpack-dev-server/4.4.0_gsf3kbl7lkd67oqwp76ivzgfha
       webpack-merge: registry.npmmirror.com/webpack-merge/5.8.0
     dev: true
 
@@ -17531,10 +17531,10 @@ packages:
       mime-types: registry.npmmirror.com/mime-types/2.1.35
       range-parser: registry.npmmirror.com/range-parser/1.2.1
       schema-utils: registry.npmmirror.com/schema-utils/4.0.0
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
     dev: true
 
-  registry.npmmirror.com/webpack-dev-server/4.4.0_6nttg2tx25yb22e42zyherlmty:
+  registry.npmmirror.com/webpack-dev-server/4.4.0_gsf3kbl7lkd67oqwp76ivzgfha:
     resolution:
       {
         integrity: sha512-+S0XRIbsopVjPFjCO8I07FXYBWYqkFmuP56ucGMTs2hA/gV4q2M9xTmNo5Tg4o8ffRR+Nm3AsXnQXxKRyYovrA==,
@@ -17576,8 +17576,8 @@ packages:
       spdy: registry.npmmirror.com/spdy/4.0.2
       strip-ansi: registry.npmmirror.com/strip-ansi/7.0.1
       url: registry.npmmirror.com/url/0.11.0
-      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq
+      webpack: registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq
       webpack-dev-middleware: registry.npmmirror.com/webpack-dev-middleware/5.3.3_webpack@5.61.0
       ws: registry.npmmirror.com/ws/8.2.3
     transitivePeerDependencies:
@@ -17615,7 +17615,7 @@ packages:
     engines: { node: ">=10.13.0" }
     dev: true
 
-  registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.9.1:
+  registry.npmmirror.com/webpack/5.61.0_webpack-cli@4.10.0:
     resolution:
       {
         integrity: sha512-fPdTuaYZ/GMGFm4WrPi2KRCqS1vDp773kj9S0iI5Uc//5cszsFEDgHNaX4Rj1vobUiU1dFIV3mA9k1eHeluFpw==,
@@ -17656,7 +17656,7 @@ packages:
       tapable: registry.npmmirror.com/tapable/2.2.1
       terser-webpack-plugin: registry.npmmirror.com/terser-webpack-plugin/5.3.6_webpack@5.61.0
       watchpack: registry.npmmirror.com/watchpack/2.4.0
-      webpack-cli: registry.npmmirror.com/webpack-cli/4.9.1_z36zbuk44jnhctxc7lvepeh5yq
+      webpack-cli: registry.npmmirror.com/webpack-cli/4.10.0_z36zbuk44jnhctxc7lvepeh5yq
       webpack-sources: registry.npmmirror.com/webpack-sources/3.2.3
     transitivePeerDependencies:
       - "@swc/core"

@@ -9,7 +9,7 @@
     "clear": "rimraf '{packages,tools}/*/{lib,dist,node_modules}' && rimraf node_modules",
     "bootstrap": "pnpm install && rm -rf .husky && husky install && husky add .husky/pre-commit \"npx --no-install lint-staged\" && husky add .husky/commit-msg \"npx --no-install commitlint --edit \"\" \"",
     "start": "pnpm --filter=@krill/web-framework-container start",
-    "build": "pnpm build"
+    "build": "pnpm -r run build"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",

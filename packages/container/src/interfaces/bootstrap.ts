@@ -1,4 +1,4 @@
-import { StoryboardConfig } from "@chenshaorui/web-framework-kernel";
+import { StoryboardConfig } from "@krill/web-framework-kernel";
 
 export interface BootstrapLibraryPluginInfo {
   name: string;

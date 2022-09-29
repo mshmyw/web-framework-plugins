@@ -19,8 +19,8 @@ module.exports = {
     extensions: [".js", ".ts", "jsx", "tsx"],
   },
   externals: {
-    "@chenshaorui/web-framework-kernel": "webFrameworkKernel",
-    "@chenshaorui/web-framework-util": "webFrameworkUtil",
+    "@krill/web-framework-kernel": "webFrameworkKernel",
+    "@krill/web-framework-utils": "webFrameworkUtil",
   },
   output: {
     path: path.join(packageDirectoryPath, "dist"),
