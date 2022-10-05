@@ -1,5 +1,13 @@
 # Change Log
 
+## 0.2.1
+
+### Patch Changes
+
+- krils organ
+- Updated dependencies
+  - @krills/web-framework-tool-build-metadata@0.1.1
+
 ## 0.2.0
 
 ### Minor Changes

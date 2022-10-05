@@ -1,5 +1,14 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- krils organ
+- Updated dependencies
+  - @krills/web-framework-kernel@0.4.1
+  - @krills/web-framework-utils@0.2.1
+
 ## 1.0.0
 
 ### Major Changes

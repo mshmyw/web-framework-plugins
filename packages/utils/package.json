@@ -1,6 +1,6 @@
 {
   "name": "@krills/web-framework-utils",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "GPL-3.0",
   "scripts": {
     "start": "rollup --watch --config rollup.config.js",
