@@ -1,6 +1,5 @@
-const fs = require("fs");
-
-const glob = require("glob");
+import fs from "fs";
+import { sync } from "glob";
 
 const loadStoryboard = (storyboardFilePath) => {
   let storyboard = null;
@@ -27,7 +26,7 @@ const loadStoryboards = (storyboardPathPatterns) => {
   const storyboards = [];
 
   storyboardPathPatterns.forEach((storyboardPathPattern) => {
-    const storyboardPaths = glob.sync(storyboardPathPattern);
+    const storyboardPaths = sync(storyboardPathPattern);
     storyboardPaths
       .filter((storyboardPath) => fs.lstatSync(storyboardPath).isFile())
       .forEach((storyboardFilePath) => {
@@ -41,6 +40,4 @@ const loadStoryboards = (storyboardPathPatterns) => {
   return storyboards;
 };
 
-module.exports = {
-  loadStoryboards,
-};
+export { loadStoryboards };

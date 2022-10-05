@@ -1,6 +1,7 @@
 const chokidar = require("chokidar");
 
 class Watcher {
+  _watcher;
   constructor(paths) {
     this._watcher = chokidar.watch(paths);
   }
@@ -10,6 +11,4 @@ class Watcher {
   }
 }
 
-module.exports = {
-  Watcher,
-};
+export {Watcher};

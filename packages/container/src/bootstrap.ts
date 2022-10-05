@@ -33,7 +33,7 @@ export function initializeKernel(
         bootstrapLibraryPluginInfo.name,
         bootstrapLibraryPluginInfo.uri
       );
-    } catch (error) {
+    } catch (error: any) {
       console.warn(
         `Register library plugin "${bootstrapLibraryPluginInfo.name}" failed: ${error.message}`
       );
@@ -47,7 +47,7 @@ export function initializeKernel(
         bootstrapComponentPluginInfo.uri,
         bootstrapComponentPluginInfo.components
       );
-    } catch (error) {
+    } catch (error: any) {
       console.warn(
         `Register component plugin "${bootstrapComponentPluginInfo.name}" failed: ${error.message}`
       );

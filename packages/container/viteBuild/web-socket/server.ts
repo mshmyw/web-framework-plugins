@@ -1,6 +1,7 @@
 const ws = require("ws");
 
 class WebSocketServer {
+  _server;
   constructor(port) {
     this._server = new ws.Server({ port }, () => {});
   }
@@ -18,6 +19,4 @@ class WebSocketServer {
   }
 }
 
-module.exports = {
-  WebSocketServer,
-};
+export { WebSocketServer };

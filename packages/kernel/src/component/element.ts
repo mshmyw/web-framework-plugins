@@ -5,7 +5,7 @@ export abstract class ComponentElement extends HTMLElement {
     this.render();
   }
 
-  public abstract render();
+  public abstract render():void;
 }
 
 export interface ComponentDeclaration {

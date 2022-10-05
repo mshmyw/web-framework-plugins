@@ -7,7 +7,7 @@
     "preinstall": "npx only-allow pnpm",
     "prepare": "husky install",
     "bootstrap": "pnpm install && rm -rf .husky && husky install && husky add .husky/pre-commit \"npx --no-install lint-staged\" && husky add .husky/commit-msg \"npx --no-install commitlint --edit \"\" \"",
-    "start": "pnpm --filter=@krill/web-framework-container start",
+    "start": "pnpm --filter=@krill/web-framework-container dev",
     "build": "pnpm -r run build",
     "changeset": "changeset",
     "version-packages": "changeset version",
@@ -28,11 +28,13 @@
     "@rollup/plugin-commonjs": "21.0.1",
     "@rollup/plugin-node-resolve": "13.0.6",
     "@rollup/plugin-replace": "3.0.0",
+    "@types/lodash": "^4.14.186",
     "@typescript-eslint/eslint-plugin": "^5.2.0",
     "@typescript-eslint/parser": "^5.2.0",
     "commitlint": "13.2.1",
     "eslint": "8.1.0",
     "husky": "7.0.4",
+    "less": "^4.1.3",
     "lint-staged": "11.2.6",
     "postcss": "8.3.11",
     "prettier": "2.4.1",
@@ -42,6 +44,9 @@
     "rollup-plugin-postcss": "4.0.1",
     "rollup-plugin-typescript2": "^0.30.0",
     "tslib": "^2.3.1",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "vite": "^3.1.4",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.0"
   }
 }

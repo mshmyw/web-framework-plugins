@@ -1,9 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-
-const glob = require("glob");
-
-const { PLUGIN } = require("@krill/web-framework-tool-build-metadata");
+import fs from "fs";
+import path from "path";
+import { sync } from "glob";
+import { PLUGIN } from "@krill/web-framework-tool-build-metadata";
 
 const convertPluginDefinition = (
   pluginDefinition,
@@ -77,7 +75,7 @@ const loadPlugins = (pluginPathPatterns) => {
   const plugins = [];
 
   pluginPathPatterns.forEach((pluginPathPattern) => {
-    const pluginPaths = glob.sync(pluginPathPattern);
+    const pluginPaths = sync(pluginPathPattern);
     pluginPaths
       .filter((pluginPath) => fs.lstatSync(pluginPath).isDirectory())
       .forEach((pluginDirectoryPath) => {
@@ -93,7 +91,7 @@ const loadPlugins = (pluginPathPatterns) => {
 
 const getPluginBundleFilePathByName = (pluginPathPatterns, pluginName) => {
   for (const pluginPathPattern of pluginPathPatterns) {
-    const pluginPaths = glob.sync(pluginPathPattern);
+    const pluginPaths = sync(pluginPathPattern);
     const pluginDirectoryPaths = pluginPaths.filter((pluginPath) =>
       fs.lstatSync(pluginPath).isDirectory()
     );
@@ -108,7 +106,4 @@ const getPluginBundleFilePathByName = (pluginPathPatterns, pluginName) => {
   return null;
 };
 
-module.exports = {
-  loadPlugins,
-  getPluginBundleFilePathByName,
-};
+export { loadPlugins, getPluginBundleFilePathByName };

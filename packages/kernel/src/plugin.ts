@@ -12,7 +12,7 @@ export function loadPlugins(
     [pluginURI: string]: PluginLoadStatus;
   }) => void
 ) {
-  const pluginLoadStatuses = {};
+  const pluginLoadStatuses:any = {};
   pluginURIs.forEach(
     (pluginURI) => (pluginLoadStatuses[pluginURI] = PluginLoadStatus.Loading)
   );

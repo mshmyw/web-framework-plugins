@@ -28,7 +28,7 @@ const getComponentPluginRollupConfigurations = (globals) => {
     output: [
       {
         file: path.join("dist", PLUGIN.OUTPUT_BUNDLE_FILE_NAME),
-        format: "umd",
+        format: "esm",
         sourcemap: true,
         globals,
         plugins: [

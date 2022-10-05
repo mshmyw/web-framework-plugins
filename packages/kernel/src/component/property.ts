@@ -9,22 +9,22 @@ export interface PropertyDeclaration {
 
 export function property(declaration: PropertyDeclaration): PropertyDecorator {
   return function decorateProperty(
-    target: ComponentElement,
-    propertyKey: string
+    target: Object,
+    propertyKey: string | symbol
   ): void {
     Reflect.defineMetadata(
-      `${PROPERTY_METADATA_PREFIX}:${propertyKey}`,
+      `${PROPERTY_METADATA_PREFIX}:${propertyKey as string}`,
       declaration,
       target
     );
 
     Reflect.defineProperty(target, declaration.name, {
       get(): any {
-        return this[propertyKey];
+        return (this as any)[propertyKey];
       },
       set(value: any) {
-        this[propertyKey] = value;
-        this.render();
+        (this as any)[propertyKey] = value;
+        (this as any).render();
       },
       enumerable: true,
     });

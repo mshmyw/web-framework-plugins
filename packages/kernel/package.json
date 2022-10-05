@@ -13,7 +13,7 @@
   "files": [
     "dist"
   ],
-  "main": "dist/index.js",
+  "main": "src/index.ts",
   "dependencies": {
     "lodash": "^4.17.21",
     "reflect-metadata": "^0.1.13"

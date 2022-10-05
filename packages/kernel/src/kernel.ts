@@ -84,7 +84,7 @@ export class Kernel {
     componentMountPointElement.innerHTML = "";
 
     components.forEach((component) => {
-      const componentElement = document.createElement(component.name);
+      const componentElement: any = document.createElement(component.name);
       componentMountPointElement.appendChild(componentElement);
       if (component.properties) {
         for (const [propertyName, propertyValue] of Object.entries(

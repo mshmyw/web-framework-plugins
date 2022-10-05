@@ -1,7 +1,6 @@
-const fs = require("fs");
-const path = require("path");
-
-const lodash = require("lodash");
+import fs from "fs";
+import path from "path";
+import {merge} from "lodash";
 
 const CONFIGURATION_DIRECTORY_NAME = "config";
 const DEFAULT_CONFIGURATION_FILE_NAME = "config.default.json";
@@ -76,9 +75,8 @@ const loadConfigurations = (packageDirectoryPath) => {
   const customConfigurations = loadCustomConfigurations(
     configurationDirectoryPath
   );
-  return lodash.merge(defaultConfigurations, customConfigurations);
+  return merge(defaultConfigurations, customConfigurations);
 };
 
-module.exports = {
-  loadConfigurations,
-};
+export  {loadConfigurations};
+

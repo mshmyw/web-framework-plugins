@@ -16,7 +16,7 @@ const getKernelRollupConfigurations = () => {
       {
         name: "webFrameworkKernel",
         file: "dist/index.js",
-        format: "umd",
+        format: "esm",
         sourcemap: true,
         plugins: [
           getBabelOutputPlugin({

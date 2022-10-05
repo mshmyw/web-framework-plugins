@@ -13,7 +13,7 @@ const getUtilRollupConfigurations = () => {
       {
         name: "webFrameworkUtil",
         file: "dist/index.js",
-        format: "umd",
+        format: "esm",
         sourcemap: true,
       },
     ],
