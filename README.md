@@ -7,9 +7,9 @@ A component-based orchestration web framework
 ## 模块之间依赖
 
 ```
-pnpm add @krill/xxx -Dw
+pnpm add @krills/xxx -Dw
 // for exp
-pnpm add @krill/web-framework-utils -Dw
+pnpm add @krills/web-framework-utils -Dw
 ```
 
 ## husky 配置
@@ -46,8 +46,9 @@ npx --no-install commitlint --edit ""
 }
 ```
 
-2 运行`pnpm build`
-3 运行 `pnpm start`
+2 运行 `pnpm bootstrap`
+3 运行`pnpm build`
+4 运行 `pnpm start`
 
 # 发布
 

@@ -1,7 +1,7 @@
 const path = require("path");
 
 const { getBabelOutputPlugin } = require("@rollup/plugin-babel");
-const { PLUGIN } = require("@krill/web-framework-tool-build-metadata");
+const { PLUGIN } = require("@krills/web-framework-tool-build-metadata");
 
 const {
   getBabelPluginConfigurations,
@@ -15,8 +15,8 @@ const {
 
 const getComponentPluginRollupConfigurations = (globals) => {
   const external = [
-    "@krill/web-framework-kernel",
-    "@krill/web-framework-utils",
+    "@krills/web-framework-kernel",
+    "@krills/web-framework-utils",
   ];
   if (globals !== undefined && globals !== null) {
     external.push(...Object.keys(globals));
