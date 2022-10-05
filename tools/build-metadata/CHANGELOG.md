@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.1.0
+
+### Minor Changes
+
+- webpack to vite
+
 ## 0.0.2
 
 ### Patch Changes

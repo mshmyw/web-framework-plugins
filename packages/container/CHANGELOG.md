@@ -1,5 +1,17 @@
 # Change Log
 
+## 1.0.0
+
+### Major Changes
+
+- webpack to vite
+
+### Patch Changes
+
+- Updated dependencies
+  - @krill/web-framework-kernel@0.4.0
+  - @krill/web-framework-utils@0.2.0
+
 ## 0.3.1
 
 ### Patch Changes
