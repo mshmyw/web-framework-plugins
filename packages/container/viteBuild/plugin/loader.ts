@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { sync } from "glob";
-import { PLUGIN } from "@krill/web-framework-tool-build-metadata";
+import { PLUGIN } from "@krills/web-framework-tool-build-metadata";
 
 const convertPluginDefinition = (
   pluginDefinition,

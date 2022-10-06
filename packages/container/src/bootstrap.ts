@@ -1,5 +1,5 @@
-import { Kernel, kernel } from "@krill/web-framework-kernel";
-import { History } from "@krill/web-framework-utils";
+import { Kernel, kernel } from "@krills/web-framework-kernel";
+import { History } from "@krills/web-framework-utils";
 
 import { BootstrapInfo } from "./interfaces";
 

@@ -7,9 +7,9 @@ A component-based orchestration web framework
 ## 模块之间依赖
 
 ```
-pnpm add @krill/xxx -Dw
+pnpm add @krills/xxx -Dw
 // for exp
-pnpm add @krill/web-framework-utils -Dw
+pnpm add @krills/web-framework-utils -Dw
 ```
 
 ## husky 配置
@@ -46,18 +46,28 @@ npx --no-install commitlint --edit ""
 }
 ```
 
-2 运行`pnpm build`
-3 运行 `pnpm start`
+2 运行 `pnpm bootstrap`
+3 运行`pnpm build`
+4 运行 `pnpm start`
 
 # 发布
 
 pnpm monorepo 默认的能力是：依赖安装、运行、构建。
 缺失的能力是版本管理，其可用 changeset 补充
 使用文档：https://pnpm.io/zh/using-changesets
+1 安装
 
 ```
 $ pnpm add -DW @changesets/cli
 $ pnpm changeset init
+```
+
+2 版本、打包
+
+```
+$ pnpm changeset && pnpm version-packages
+$ 提交git变动信息
+$ pnpm release
 ```
 
 ## changeset 一个注意的问题

@@ -1,6 +1,6 @@
 {
-  "name": "@krill/web-framework-tool-rollup-config-factory",
-  "version": "0.1.0",
+  "name": "@krills/web-framework-tool-rollup-config-factory",
+  "version": "0.2.1",
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   ],
   "main": "src/index.js",
   "dependencies": {
-    "@krill/web-framework-tool-build-metadata": "workspace:*"
+    "@krills/web-framework-tool-build-metadata": "workspace:*"
   },
   "peerDependencies": {
     "@babel/core": "^7.14.0",

@@ -1,13 +1,34 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- krils organ
+- Updated dependencies
+  - @krills/web-framework-kernel@0.4.1
+  - @krills/web-framework-utils@0.2.1
+
+## 1.0.0
+
+### Major Changes
+
+- webpack to vite
+
+### Patch Changes
+
+- Updated dependencies
+  - @krills/web-framework-kernel@0.4.0
+  - @krills/web-framework-utils@0.2.0
+
 ## 0.3.1
 
 ### Patch Changes
 
 - rollup config factory init
 - Updated dependencies
-  - @krill/web-framework-kernel@0.3.1
-  - @krill/web-framework-utils@0.1.2
+  - @krills/web-framework-kernel@0.3.1
+  - @krills/web-framework-utils@0.1.2
 
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
