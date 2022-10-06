@@ -46,23 +46,24 @@ npx --no-install commitlint --edit ""
 }
 ```
 
-2 运行 `pnpm bootstrap`
-3 运行`pnpm build`
-4 运行 `pnpm start`
+2. 运行 `pnpm bootstrap`
+3. 运行 `pnpm build`
+4. 运行 `pnpm start`
 
 # 发布
 
 pnpm monorepo 默认的能力是：依赖安装、运行、构建。
 缺失的能力是版本管理，其可用 changeset 补充
 使用文档：https://pnpm.io/zh/using-changesets
-1 安装
+
+1. 安装
 
 ```
 $ pnpm add -DW @changesets/cli
 $ pnpm changeset init
 ```
 
-2 版本、打包
+2. 版本、打包
 
 ```
 $ pnpm changeset && pnpm version-packages
@@ -93,4 +94,11 @@ npm config set registry=https://registry.npmjs.org/
 ```
 npm config set registry=https://registry.npm.taobao.org/
 npm config get registry
+```
+
+# npmjs.com 登录
+
+```
+name: ximenchuixue1
+email: timehorse@126.com
 ```
