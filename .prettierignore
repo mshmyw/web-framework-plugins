@@ -1,7 +1,6 @@
 .editorconfig
 .gitignore
 .prettierignore
+.npmrc
 yarn.lock
 LICENSE
-
-*.ejs

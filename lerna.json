@@ -1,0 +1,8 @@
+{
+  "packages": ["components/*", "libraries/*"],
+  "version": "independent",
+  "npmClient": "yarn",
+  "stream": true,
+  "conventionalCommits": true,
+  "useWorkspaces": true
+}

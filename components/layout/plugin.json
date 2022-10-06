@@ -1,0 +1,5 @@
+{
+  "type": "component",
+  "name": "layout",
+  "components": ["layout-grid-layout"]
+}

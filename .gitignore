@@ -7,6 +7,6 @@ node_modules/
 # Husky
 .husky/
 
-# Web Framework
-/packages/*/dist/
-/packages/container/config/config.json
+# Web Framework Plugins
+/components/*/dist/
+/libraries/*/dist/
