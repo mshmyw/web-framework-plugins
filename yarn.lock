@@ -1094,18 +1094,6 @@
     "@babel/helper-validator-identifier" "^7.15.7"
     to-fast-properties "^2.0.0"
 
-"@chenshaorui/web-framework-tool-build-metadata@^0.0.1":
-  version "0.0.1"
-  resolved "https://npm.pkg.github.com/download/@chenshaorui/web-framework-tool-build-metadata/0.0.1/7be7533c3992a0f11bb9c5434c3aa915f93df0883e7b50e6cf3538c199b3c3a9#2553ececc692833925499002843fbd937a9eb59c"
-  integrity sha512-+yb1yQpQxnIky/zCbH1BPj++GBjjbAEJ1dwQEn99e/Opy1hs0rt+bWxihlrKH95ybhnzrMkZmTJsMxfNf3VZMA==
-
-"@chenshaorui/web-framework-tool-rollup-config-factory@^0.0.3":
-  version "0.0.3"
-  resolved "https://npm.pkg.github.com/download/@chenshaorui/web-framework-tool-rollup-config-factory/0.0.3/9d46e623b1ba5fab03c811f89f2dda04b0eaa1c5067005e57330157b3b42cec1#31f0286c8b17b4cbb3cd622240a933eac76cb97a"
-  integrity sha512-snqLM5GF/rbFR7hgXm5cuIP53+H6pGdSBg3ZHtPDWEynjwr1NJa4WPSDeOg4nHUzznJWpai0wJjD9mgGDCR0MA==
-  dependencies:
-    "@chenshaorui/web-framework-tool-build-metadata" "^0.0.1"
-
 "@commitlint/cli@^13.2.1":
   version "13.2.1"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-13.2.1.tgz#80ebd46beef6ceed3bb0c0842bcda8d02a3c91de"
@@ -1282,6 +1270,18 @@
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.0.tgz#87de7af9c231826fdd68ac7258f77c429e0e5fcf"
   integrity sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==
+
+"@krills/web-framework-tool-build-metadata@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npmmirror.com/@krills/web-framework-tool-build-metadata/-/web-framework-tool-build-metadata-0.1.1.tgz#39be08438f06cc8a3556cedddce62328b612b750"
+  integrity sha512-KX9GbEILOBbG9mYTwKzj9C4uVcMfd7ogQwPG/tp/Otcwdm6XtMBmT8qas3IR7Ic1GsMXRn1bJbLVaV5oAXPGIQ==
+
+"@krills/web-framework-tool-rollup-config-factory@^0.2.0":
+  version "0.2.1"
+  resolved "https://registry.npmmirror.com/@krills/web-framework-tool-rollup-config-factory/-/web-framework-tool-rollup-config-factory-0.2.1.tgz#e1a40276c26336f8291877866008417e76f5871b"
+  integrity sha512-1qsBFL2LxEAcKh24nCMzZCLdsWIfFq6lTRbb6Km7k4zKW/u2xgPhWgiynM1qO0HUDwkgpNEJnjsdq2/1+7VIUQ==
+  dependencies:
+    "@krills/web-framework-tool-build-metadata" "0.1.1"
 
 "@lerna/add@4.0.0":
   version "4.0.0"
