@@ -1477,10 +1477,10 @@
   resolved "https://registry.npmmirror.com/@krills/web-framework-tool-build-metadata/-/web-framework-tool-build-metadata-0.1.1.tgz#39be08438f06cc8a3556cedddce62328b612b750"
   integrity sha512-KX9GbEILOBbG9mYTwKzj9C4uVcMfd7ogQwPG/tp/Otcwdm6XtMBmT8qas3IR7Ic1GsMXRn1bJbLVaV5oAXPGIQ==
 
-"@krills/web-framework-tool-rollup-config-factory@^0.2.0":
-  version "0.2.1"
-  resolved "https://registry.npmmirror.com/@krills/web-framework-tool-rollup-config-factory/-/web-framework-tool-rollup-config-factory-0.2.1.tgz#e1a40276c26336f8291877866008417e76f5871b"
-  integrity sha512-1qsBFL2LxEAcKh24nCMzZCLdsWIfFq6lTRbb6Km7k4zKW/u2xgPhWgiynM1qO0HUDwkgpNEJnjsdq2/1+7VIUQ==
+"@krills/web-framework-tool-rollup-config-factory@^0.2.2":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/@krills/web-framework-tool-rollup-config-factory/-/web-framework-tool-rollup-config-factory-0.2.2.tgz#93782f67474d0e8268ea395013e4502611e77c49"
+  integrity sha512-j2mgyVEwIfTdX6OfGcmfOBqXeQNC15nAWoiTPiF1ZMBXY41rvfyYQ04CosWYCOYHlIHZa2Xm3PHD1WbUzYHtWw==
   dependencies:
     "@krills/web-framework-tool-build-metadata" "0.1.1"
 
