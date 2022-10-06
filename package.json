@@ -12,7 +12,7 @@
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && pnpm release:only",
-    "release:only": "changeset publish --registry=https://registry.npmjs.com/"
+    "release:only": "changeset publish --access public --registry=https://registry.npmjs.com/"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
